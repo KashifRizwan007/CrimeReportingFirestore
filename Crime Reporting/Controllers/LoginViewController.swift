@@ -8,8 +8,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController,signInFill {
+    
+    func fillFields(email: String, password: String) {
+        self.emailField.text = email
+        self.passwordField.text = password
+    }
+    
     @IBOutlet weak var emailField: textFieldDesign!
     @IBOutlet weak var passwordField: textFieldDesign!
     @IBOutlet weak var signBtnOut: ButtonDesign!
@@ -32,6 +37,17 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSignUp"{
+            let signUpVc = segue.destination as! SignUpViewController
+            signUpVc.signUpDel = self
+        }
+    }
+    @IBAction func signUpBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "toSignUp", sender: nil)
+    }
+    
     @IBAction func signInBtn(_ sender: Any) {
         self.loader.startAnimating()
         self.signBtnOut.isEnabled = false
@@ -49,15 +65,7 @@ class LoginViewController: UIViewController {
                 }else{
                     let alert = UIAlertController(title: "Success", message: "You are logged into your account.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_) in
-                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
-                        // setting the login status to true
-                        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                        UserDefaults.standard.synchronize()
-                        appDel.window!.rootViewController = centerVC
-                        appDel.window!.makeKeyAndVisible()
-                        //self.performSegue(withIdentifier: "fromLogin", sender: nil)
+                        self.performSegue(withIdentifier: "toDashboard", sender: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }

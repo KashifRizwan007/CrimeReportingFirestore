@@ -9,6 +9,7 @@ target 'Crime Reporting' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
 	pod 'IQKeyboardManager'
+	pod 'SideMenu'
   # Pods for Crime Reporting
 
 end

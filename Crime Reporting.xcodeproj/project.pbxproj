@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1203992022E1BF3500DBD7B0 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */; };
+		1203992222E1C3E100DBD7B0 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992122E1C3E100DBD7B0 /* ProfileTableViewCell.swift */; };
+		1203992422E1C3F500DBD7B0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */; };
+		1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992622E1C90A00DBD7B0 /* staticLinker.swift */; };
+		1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992822E1CA9700DBD7B0 /* userInfo.swift */; };
 		123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4B22DEEF2F007445DC /* AppDelegate.swift */; };
 		123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4D22DEEF2F007445DC /* LoginViewController.swift */; };
 		123A7C5122DEEF2F007445DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A7C4F22DEEF2F007445DC /* Main.storyboard */; };
@@ -26,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		00BBE73E3DA639A89CEFA56D /* Pods_Crime_Reporting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crime_Reporting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		1203992122E1C3E100DBD7B0 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		1203992622E1C90A00DBD7B0 /* staticLinker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staticLinker.swift; sourceTree = "<group>"; };
+		1203992822E1CA9700DBD7B0 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		123A7C4822DEEF2F007445DC /* Crime Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Reporting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A7C4B22DEEF2F007445DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		123A7C4D22DEEF2F007445DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1203992522E1C8EF00DBD7B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1203992622E1C90A00DBD7B0 /* staticLinker.swift */,
+				1203992822E1CA9700DBD7B0 /* userInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		123A7C3F22DEEF2F007445DC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,7 @@
 			children = (
 				123A7C4B22DEEF2F007445DC /* AppDelegate.swift */,
 				123A7C6422DEFB51007445DC /* Controllers */,
+				1203992522E1C8EF00DBD7B0 /* Model */,
 				123A7C6322DEFB3B007445DC /* View */,
 				123A7C6A22DF01BA007445DC /* Networking */,
 				123A7C5D22DEF047007445DC /* GoogleService-Info.plist */,
@@ -99,6 +119,8 @@
 				123A7C5F22DEF60D007445DC /* textFieldDesign.swift */,
 				123A7C6122DEF7E5007445DC /* ButtonDesign.swift */,
 				123A7C6822DEFFA8007445DC /* UIImageViewRounded.swift */,
+				1203992122E1C3E100DBD7B0 /* ProfileTableViewCell.swift */,
+				1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +131,7 @@
 				123A7C4D22DEEF2F007445DC /* LoginViewController.swift */,
 				123A7C6622DEFD68007445DC /* SignUpViewController.swift */,
 				123A7C6F22DF095D007445DC /* InitialViewController.swift */,
+				1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,12 +281,17 @@
 			files = (
 				123A7C6C22DF01D8007445DC /* loginRequest.swift in Sources */,
 				123A7C6022DEF60D007445DC /* textFieldDesign.swift in Sources */,
+				1203992422E1C3F500DBD7B0 /* MenuTableViewCell.swift in Sources */,
 				123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */,
+				1203992222E1C3E100DBD7B0 /* ProfileTableViewCell.swift in Sources */,
 				123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */,
+				1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */,
 				123A7C6222DEF7E5007445DC /* ButtonDesign.swift in Sources */,
+				1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */,
 				123A7C6922DEFFA8007445DC /* UIImageViewRounded.swift in Sources */,
 				123A7C6722DEFD68007445DC /* SignUpViewController.swift in Sources */,
 				123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */,
+				1203992022E1BF3500DBD7B0 /* SideMenuViewController.swift in Sources */,
 				123A7C7022DF095D007445DC /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

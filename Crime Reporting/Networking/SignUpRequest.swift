@@ -55,7 +55,7 @@ class SignUpRequest{
                 if let err = error{
                     completion(err)
                 }else if let Url = url{
-                    self.db.collection("users").document(Auth.auth().currentUser!.uid).collection("userInfo").addDocument(data: ["email":self.email,"name":self.name,"image": Url.absoluteString], completion: {(error) in
+                    self.db.collection("users").document(Auth.auth().currentUser!.uid).setData(["email":self.email,"name":self.name,"userType":"user","image": Url.absoluteString], completion: {(error) in
                         if let err = error{
                             completion(err.localizedDescription)
                         }else{
@@ -77,7 +77,6 @@ class SignUpRequest{
     
     private func uploadProfileImage(image:UIImage?, completion: @escaping (_ error: String?,_ url:URL?) -> ()){
         let data = image!.jpegData(compressionQuality: 1.0)
-        //let data = UIImageJPEGRepresentation(self.image, 1.0)
         let imageUpload = Storage.storage().reference().child("Images/\(String(describing: Auth.auth().currentUser?.uid))/profilePic.jpg")
         _ = imageUpload.putData(data!, metadata: nil) { (metadata, error) in
             if let err = error {
