@@ -65,7 +65,7 @@ class SignUpRequest{
                 }
             })
         }else{
-            self.db.collection("users").document(Auth.auth().currentUser!.uid).collection("userInfo").addDocument(data: ["email":self.email,"name":self.name,"image":""], completion: {(error) in
+            self.db.collection("users").document(Auth.auth().currentUser!.uid).setData(["email":self.email,"name":self.name,"image":""], completion: {(error) in
                 if let err = error{
                     completion(err.localizedDescription)
                 }else{

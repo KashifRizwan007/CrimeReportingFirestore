@@ -26,6 +26,8 @@
 		123A7C6E22DF05E1007445DC /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 123A7C6D22DF05E0007445DC /* background.jpg */; };
 		123A7C7022DF095D007445DC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C6F22DF095D007445DC /* InitialViewController.swift */; };
 		123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C7122DF099F007445DC /* SignUpRequest.swift */; };
+		125F6EC322E2EC5B00C50470 /* FileReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */; };
+		125F6EC522E2F1B200C50470 /* submitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F6EC422E2F1B200C50470 /* submitReport.swift */; };
 		25F4FECB3450243D7F17F49B /* Pods_Crime_Reporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBE73E3DA639A89CEFA56D /* Pods_Crime_Reporting.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		123A7C6D22DF05E0007445DC /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		123A7C6F22DF095D007445DC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		123A7C7122DF099F007445DC /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReportViewController.swift; sourceTree = "<group>"; };
+		125F6EC422E2F1B200C50470 /* submitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submitReport.swift; sourceTree = "<group>"; };
 		1D85E0BFB96269B944A0E207 /* Pods-Crime Reporting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crime Reporting.debug.xcconfig"; path = "Target Support Files/Pods-Crime Reporting/Pods-Crime Reporting.debug.xcconfig"; sourceTree = "<group>"; };
 		4A03A5EB602E6DDF672EE7E0 /* Pods-Crime Reporting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crime Reporting.release.xcconfig"; path = "Target Support Files/Pods-Crime Reporting/Pods-Crime Reporting.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 				123A7C6622DEFD68007445DC /* SignUpViewController.swift */,
 				123A7C6F22DF095D007445DC /* InitialViewController.swift */,
 				1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */,
+				125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			children = (
 				123A7C6B22DF01D8007445DC /* loginRequest.swift */,
 				123A7C7122DF099F007445DC /* SignUpRequest.swift */,
+				125F6EC422E2F1B200C50470 /* submitReport.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -285,12 +291,14 @@
 				123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */,
 				1203992222E1C3E100DBD7B0 /* ProfileTableViewCell.swift in Sources */,
 				123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */,
+				125F6EC322E2EC5B00C50470 /* FileReportViewController.swift in Sources */,
 				1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */,
 				123A7C6222DEF7E5007445DC /* ButtonDesign.swift in Sources */,
 				1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */,
 				123A7C6922DEFFA8007445DC /* UIImageViewRounded.swift in Sources */,
 				123A7C6722DEFD68007445DC /* SignUpViewController.swift in Sources */,
 				123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */,
+				125F6EC522E2F1B200C50470 /* submitReport.swift in Sources */,
 				1203992022E1BF3500DBD7B0 /* SideMenuViewController.swift in Sources */,
 				123A7C7022DF095D007445DC /* InitialViewController.swift in Sources */,
 			);

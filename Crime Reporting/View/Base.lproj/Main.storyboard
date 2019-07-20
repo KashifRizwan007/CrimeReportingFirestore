@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBQ-yd-Rx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="927"/>
+            <point key="canvasLocation" x="5089.8550724637689" y="926.78571428571422"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="wrs-su-hSg">
@@ -458,7 +458,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" highlightedImage="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-S6-Sxd" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
-                                                    <rect key="frame" x="157" y="11" width="100" height="100"/>
+                                                    <rect key="frame" x="110" y="11" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="BqW-Qb-6NJ"/>
                                                         <constraint firstAttribute="height" constant="100" id="rjq-hM-55E"/>
@@ -474,19 +474,19 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kashif Rizwan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-pa-T4u">
-                                                    <rect key="frame" x="153.66666666666666" y="119" width="106.99999999999997" height="21"/>
+                                                    <rect key="frame" x="106.66666666666669" y="119" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-Gu-0jM">
-                                                    <rect key="frame" x="188.66666666666666" y="148" width="37" height="21"/>
+                                                    <rect key="frame" x="141.66666666666666" y="148" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W8u-rW-mme">
-                                                    <rect key="frame" x="197" y="51" width="20" height="20"/>
+                                                    <rect key="frame" x="150" y="51" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -516,7 +516,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-rG-YTx">
-                                                    <rect key="frame" x="58" y="19.666666666666664" width="326" height="21"/>
+                                                    <rect key="frame" x="58" y="19.666666666666664" width="236" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -564,11 +564,175 @@
                     <navigationItem key="navigationItem" id="uaO-T4-oxW"/>
                     <connections>
                         <outlet property="menuTableView" destination="x26-mB-lP9" id="Cma-fu-KIw"/>
+                        <segue destination="8PD-gi-vj1" kind="show" identifier="fileReport" id="03z-EK-Vay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3W-wS-fkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2357.971014492754" y="243.75"/>
+        </scene>
+        <!--File Report View Controller-->
+        <scene sceneID="Fte-za-iaL">
+            <objects>
+                <viewController id="P0x-aR-8Vf" customClass="FileReportViewController" customModule="Crime_Reporting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1oF-JR-Eu6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zUR-6U-KYb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icC-23-kax">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-CP-BOW">
+                                        <rect key="frame" x="50" y="372" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact No." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tF-fO9">
+                                        <rect key="frame" x="50" y="327" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDa-t0-zVv" customClass="textFieldDesign" customModule="Crime_Reporting" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="282" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="icons8-sort-down-30"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="P0x-aR-8Vf" id="938-nv-iW1"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Report type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCr-tF-bIt" customClass="textFieldDesign" customModule="Crime_Reporting" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="237" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="icons8-sort-down-30"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="P0x-aR-8Vf" id="4ru-3e-dxC"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xom-2R-ykd">
+                                        <rect key="frame" x="50" y="417" width="314" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaz-pu-58g" customClass="ButtonDesign" customModule="Crime_Reporting" customModuleProvider="target">
+                                        <rect key="frame" x="172" y="462" width="70" height="30"/>
+                                        <color key="backgroundColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="hcn-bN-Obg"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submit:" destination="P0x-aR-8Vf" eventType="touchUpInside" id="CUk-wc-66u"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5aF-kS-IGq">
+                                        <rect key="frame" x="197" y="502" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File A Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ent-pz-0BJ">
+                                        <rect key="frame" x="142" y="160" width="130" height="37"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qaz-pu-58g" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="03t-vI-T6L"/>
+                                    <constraint firstItem="kRJ-tF-fO9" firstAttribute="leading" secondItem="icC-23-kax" secondAttribute="leading" constant="50" id="1r4-nD-pSt"/>
+                                    <constraint firstItem="kRJ-tF-fO9" firstAttribute="top" secondItem="XDa-t0-zVv" secondAttribute="bottom" constant="15" id="2Bj-KS-2O9"/>
+                                    <constraint firstAttribute="bottom" secondItem="5aF-kS-IGq" secondAttribute="bottom" constant="252" id="3Uk-gm-lmD"/>
+                                    <constraint firstItem="DCr-tF-bIt" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="5Kh-qT-VPY"/>
+                                    <constraint firstItem="5aF-kS-IGq" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="EI2-vg-xic"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDa-t0-zVv" secondAttribute="trailing" constant="50" id="EWe-5T-Vi7"/>
+                                    <constraint firstItem="XDa-t0-zVv" firstAttribute="top" secondItem="DCr-tF-bIt" secondAttribute="bottom" constant="15" id="FaP-nF-IOn"/>
+                                    <constraint firstAttribute="trailing" secondItem="xom-2R-ykd" secondAttribute="trailing" constant="50" id="G8M-aS-VzZ"/>
+                                    <constraint firstItem="xom-2R-ykd" firstAttribute="top" secondItem="8ng-CP-BOW" secondAttribute="bottom" constant="15" id="GOa-OA-Djd"/>
+                                    <constraint firstItem="8ng-CP-BOW" firstAttribute="centerY" secondItem="icC-23-kax" secondAttribute="centerY" id="Ioi-BA-kLF"/>
+                                    <constraint firstItem="XDa-t0-zVv" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="Jp3-Oq-h8Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="kRJ-tF-fO9" secondAttribute="trailing" constant="50" id="Qf4-aN-e50"/>
+                                    <constraint firstItem="xom-2R-ykd" firstAttribute="leading" secondItem="icC-23-kax" secondAttribute="leading" constant="50" id="SCQ-1Q-Scm"/>
+                                    <constraint firstItem="5aF-kS-IGq" firstAttribute="top" secondItem="qaz-pu-58g" secondAttribute="bottom" constant="10" id="Sf8-g5-9Vg"/>
+                                    <constraint firstItem="xom-2R-ykd" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="TcK-41-mJD"/>
+                                    <constraint firstAttribute="trailing" secondItem="8ng-CP-BOW" secondAttribute="trailing" constant="50" id="Tmf-wn-p9b"/>
+                                    <constraint firstItem="DCr-tF-bIt" firstAttribute="top" secondItem="Ent-pz-0BJ" secondAttribute="bottom" constant="40" id="Txv-Zi-lcl"/>
+                                    <constraint firstItem="kRJ-tF-fO9" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="Y2t-Sl-Hp4"/>
+                                    <constraint firstItem="qaz-pu-58g" firstAttribute="top" secondItem="xom-2R-ykd" secondAttribute="bottom" constant="15" id="ZO7-6X-ROF"/>
+                                    <constraint firstItem="8ng-CP-BOW" firstAttribute="top" secondItem="kRJ-tF-fO9" secondAttribute="bottom" constant="15" id="Zhk-YV-85X"/>
+                                    <constraint firstItem="DCr-tF-bIt" firstAttribute="leading" secondItem="icC-23-kax" secondAttribute="leading" constant="50" id="hB9-yu-ElX"/>
+                                    <constraint firstItem="XDa-t0-zVv" firstAttribute="leading" secondItem="icC-23-kax" secondAttribute="leading" constant="50" id="sys-WI-R4Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="DCr-tF-bIt" secondAttribute="trailing" constant="50" id="w5X-db-XHs"/>
+                                    <constraint firstItem="8ng-CP-BOW" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="wnJ-Kh-Tvj"/>
+                                    <constraint firstItem="8ng-CP-BOW" firstAttribute="leading" secondItem="icC-23-kax" secondAttribute="leading" constant="50" id="xzu-2m-c0P"/>
+                                    <constraint firstItem="Ent-pz-0BJ" firstAttribute="centerX" secondItem="icC-23-kax" secondAttribute="centerX" id="yIg-Iz-LAb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zUR-6U-KYb" firstAttribute="top" secondItem="8y7-pW-92P" secondAttribute="top" id="99X-wD-kSs"/>
+                            <constraint firstItem="8y7-pW-92P" firstAttribute="trailing" secondItem="icC-23-kax" secondAttribute="trailing" id="BwU-4W-vQg"/>
+                            <constraint firstItem="icC-23-kax" firstAttribute="leading" secondItem="8y7-pW-92P" secondAttribute="leading" id="H5O-q8-hhO"/>
+                            <constraint firstItem="8y7-pW-92P" firstAttribute="bottom" secondItem="icC-23-kax" secondAttribute="bottom" id="Ji0-Hx-rdU"/>
+                            <constraint firstItem="8y7-pW-92P" firstAttribute="bottom" secondItem="zUR-6U-KYb" secondAttribute="bottom" id="aX2-9h-ejA"/>
+                            <constraint firstItem="zUR-6U-KYb" firstAttribute="leading" secondItem="8y7-pW-92P" secondAttribute="leading" id="oBj-8R-v6N"/>
+                            <constraint firstItem="8y7-pW-92P" firstAttribute="trailing" secondItem="zUR-6U-KYb" secondAttribute="trailing" id="qX5-yO-lVZ"/>
+                            <constraint firstItem="icC-23-kax" firstAttribute="top" secondItem="8y7-pW-92P" secondAttribute="top" id="wef-FN-1vr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8y7-pW-92P"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AjT-3E-0Wz"/>
+                    <connections>
+                        <outlet property="cityOut" destination="XDa-t0-zVv" id="p6h-X5-IO3"/>
+                        <outlet property="contactNoOut" destination="kRJ-tF-fO9" id="ugm-z5-Vav"/>
+                        <outlet property="descritpionOut" destination="xom-2R-ykd" id="YX9-hp-YXz"/>
+                        <outlet property="loader" destination="5aF-kS-IGq" id="XP6-96-G42"/>
+                        <outlet property="reportType" destination="DCr-tF-bIt" id="GWN-ob-tET"/>
+                        <outlet property="submitOut" destination="qaz-pu-58g" id="7GL-S7-slI"/>
+                        <outlet property="titleOut" destination="8ng-CP-BOW" id="DR6-B0-rcv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tir-cw-4f6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268.115942028986" y="1146.4285714285713"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="khg-mY-1pJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8PD-gi-vj1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rmz-vK-83z"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WdB-H5-yQI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P0x-aR-8Vf" kind="relationship" relationship="rootViewController" id="PLG-4L-HBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doQ-xy-CHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357.971014492754" y="1146.4285714285713"/>
         </scene>
     </scenes>
     <resources>
@@ -577,6 +741,7 @@
         <image name="icons8-menu-24" width="32" height="32"/>
         <image name="icons8-name-tag-40" width="40" height="40"/>
         <image name="icons8-password-40" width="40" height="40"/>
+        <image name="icons8-sort-down-30" width="30" height="30"/>
         <image name="userProfile" width="512" height="424"/>
     </resources>
 </document>

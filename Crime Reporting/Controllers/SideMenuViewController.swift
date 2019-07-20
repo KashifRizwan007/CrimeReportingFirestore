@@ -28,6 +28,14 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
 extension SideMenuViewController{
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section != 0 && indexPath.row == 1{
+            self.performSegue(withIdentifier: "fileReport", sender: nil)
+        }else if indexPath.section != 0 && indexPath.row == 2{
+            self.performSegue(withIdentifier: "fileReport", sender: nil)
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.userMenu.count
     }
