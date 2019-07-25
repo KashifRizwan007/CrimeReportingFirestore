@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
 
     var currentTextField = UITextField()
     @IBOutlet weak var reportType: textFieldDesign!
@@ -20,7 +20,7 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var city = ["Karachi","Lahore","Islamabad","Rawalpindi"]
-    var type = ["Missing Person","Crime","Complain"]
+    var type = ["Missing Person","Crime","Complaint"]
     var pickerView = UIPickerView()
     var submitObj:submitReport!
     
@@ -32,7 +32,7 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     }
     
     @IBAction func submit(_ sender: Any) {
-        /*self.loader.startAnimating()
+        self.loader.startAnimating()
         self.submitOut.isEnabled = false
         if let type = self.reportType.text, let city = self.cityOut.text, let contactNo = self.contactNoOut.text, let title = self.titleOut.text, let descript = self.descritpionOut.text{
             self.submitObj = submitReport(type: type, city: city, contactNo: contactNo, title: title, descript: descript)
@@ -46,7 +46,7 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
                 }else{
                     let alert = UIAlertController(title: "Success", message: "Report submitted successfully", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_) in
-                        self.navigationController?.popViewController(animated: true)
+                        self.dismiss(animated: true, completion: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -55,9 +55,7 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
             let alert = UIAlertController(title: "Alert", message: "Please fill all fields", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }*/
-        self.dismiss(animated: true, completion: nil)
-    }
+        }    }
     
 }
 

@@ -12,7 +12,7 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     @IBOutlet weak var menuTableView: UITableView!
     var userMenu:[[String]]!
-    var userChoice = [["User"],["Dashboard","File A Report","View My Reports"]]
+    var userChoice = [["User"],["Dashboard","File A Report"]]//,"View My Reports"]]
     var adminChoice = [["Admin"],["Dashboard"]]
     var imageNames = ["dashboard","add","view"]
 

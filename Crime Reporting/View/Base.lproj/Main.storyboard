@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="747.82608695652175" y="-90.401785714285708"/>
         </scene>
-        <!--Item 2-->
+        <!--Missing Persons-->
         <scene sceneID="kdK-DF-sPL">
             <objects>
-                <viewController id="29I-71-TVG" sceneMemberID="viewController">
+                <viewController id="29I-71-TVG" customClass="MissingPersonsViewController" customModule="Crime_Reporting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EMW-t5-cum">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,26 +148,38 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="MA7-gY-R86">
                                             <color key="tintColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="n5x-oc-wSr"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="58y-jl-3PD">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="58y-jl-3PD" firstAttribute="top" secondItem="JyP-XI-bi0" secondAttribute="bottom" id="Lul-a5-VYA"/>
                             <constraint firstItem="JyP-XI-bi0" firstAttribute="trailing" secondItem="tbQ-dj-Mvn" secondAttribute="trailing" id="Te4-Zj-hfA"/>
+                            <constraint firstItem="tbQ-dj-Mvn" firstAttribute="trailing" secondItem="58y-jl-3PD" secondAttribute="trailing" id="XYv-WP-ieI"/>
+                            <constraint firstItem="58y-jl-3PD" firstAttribute="leading" secondItem="tbQ-dj-Mvn" secondAttribute="leading" id="jPh-g1-GfH"/>
+                            <constraint firstItem="tbQ-dj-Mvn" firstAttribute="bottom" secondItem="58y-jl-3PD" secondAttribute="bottom" id="k1P-KM-DMZ"/>
                             <constraint firstItem="JyP-XI-bi0" firstAttribute="top" secondItem="tbQ-dj-Mvn" secondAttribute="top" id="sF1-uY-MbT"/>
                             <constraint firstItem="JyP-XI-bi0" firstAttribute="leading" secondItem="tbQ-dj-Mvn" secondAttribute="leading" id="wV7-xD-XQe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tbQ-dj-Mvn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="qIb-1E-rCI"/>
+                    <tabBarItem key="tabBarItem" title="Missing Persons" image="icons8-bank-card-missing-30" id="UDJ-TL-Gmk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="missingPersonsTableView" destination="58y-jl-3PD" id="JLm-6K-x3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQT-Z8-SPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4180" y="244"/>
         </scene>
-        <!--Item-->
+        <!--Complaints-->
         <scene sceneID="qSS-Rx-4GB">
             <objects>
                 <viewController id="zPr-1H-hzo" sceneMemberID="viewController">
@@ -182,6 +194,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="6s8-zS-9h3">
                                             <color key="tintColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="cuH-f3-svP"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -194,17 +207,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZRt-Gu-VVc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="y9K-nw-iTf"/>
+                    <tabBarItem key="tabBarItem" title="Complaints" image="icons8-strike-30" id="wP6-B2-rvb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBQ-yd-Rx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5089.8550724637689" y="926.78571428571422"/>
+            <point key="canvasLocation" x="4180" y="905"/>
         </scene>
-        <!--Item 1-->
+        <!--Crime Reports-->
         <scene sceneID="wrs-su-hSg">
             <objects>
-                <viewController id="WxF-Ct-qFV" sceneMemberID="viewController">
+                <viewController id="WxF-Ct-qFV" customClass="CrimesViewController" customModule="Crime_Reporting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2jg-mN-elw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,24 +232,104 @@
                                                 <segue destination="V3z-tI-Ad7" kind="presentation" id="ABe-0r-Phl"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="0dQ-l2-3lL"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4h-na-WbF">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reportsCell" rowHeight="102" id="LM3-ou-Xi5" customClass="ReportsTableViewCell" customModule="Crime_Reporting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LM3-ou-Xi5" id="lZ1-vG-Cge">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-tC-TaU" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="Rgv-AN-LY4"/>
+                                                        <constraint firstAttribute="width" constant="80" id="uDo-2M-KpP"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circular" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ors-qV-3yF">
+                                                    <rect key="frame" x="108" y="21" width="286" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-MN-GOz">
+                                                    <rect key="frame" x="108" y="52" width="286" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="i6G-82-RLn">
+                                                    <rect key="frame" x="50" y="41" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OEC-tC-TaU" firstAttribute="top" secondItem="lZ1-vG-Cge" secondAttribute="topMargin" id="4X9-CJ-x9p"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ors-qV-3yF" secondAttribute="trailing" id="Agi-Mu-5aa"/>
+                                                <constraint firstItem="Ygi-MN-GOz" firstAttribute="leading" secondItem="OEC-tC-TaU" secondAttribute="trailing" constant="8" id="HiP-xM-Hut"/>
+                                                <constraint firstItem="i6G-82-RLn" firstAttribute="centerY" secondItem="OEC-tC-TaU" secondAttribute="centerY" id="ZzP-9s-v8R"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ygi-MN-GOz" secondAttribute="trailing" id="cKR-l3-mwm"/>
+                                                <constraint firstItem="OEC-tC-TaU" firstAttribute="leading" secondItem="lZ1-vG-Cge" secondAttribute="leadingMargin" id="eM7-MZ-gBY"/>
+                                                <constraint firstItem="OEC-tC-TaU" firstAttribute="bottom" secondItem="lZ1-vG-Cge" secondAttribute="bottomMargin" id="gR2-E1-wcU"/>
+                                                <constraint firstItem="Ors-qV-3yF" firstAttribute="top" secondItem="lZ1-vG-Cge" secondAttribute="topMargin" constant="10" id="jmU-kX-DP2"/>
+                                                <constraint firstItem="i6G-82-RLn" firstAttribute="centerX" secondItem="OEC-tC-TaU" secondAttribute="centerX" id="ypC-Ic-Dhg"/>
+                                                <constraint firstItem="Ygi-MN-GOz" firstAttribute="top" secondItem="Ors-qV-3yF" secondAttribute="bottom" constant="10" id="zJi-Wn-9yO"/>
+                                                <constraint firstItem="Ors-qV-3yF" firstAttribute="leading" secondItem="OEC-tC-TaU" secondAttribute="trailing" constant="8" id="zoR-1u-kGq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="city" destination="Ygi-MN-GOz" id="4PW-OM-8Si"/>
+                                            <outlet property="loader" destination="i6G-82-RLn" id="6hJ-VD-MEF"/>
+                                            <outlet property="profileImage" destination="OEC-tC-TaU" id="NKj-NZ-pzJ"/>
+                                            <outlet property="title" destination="Ors-qV-3yF" id="aHt-TJ-7bK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WxF-Ct-qFV" id="dJn-Od-tEe"/>
+                                    <outlet property="delegate" destination="WxF-Ct-qFV" id="apm-MT-kaV"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g2f-lP-FFZ" firstAttribute="trailing" secondItem="rKJ-qq-IpR" secondAttribute="trailing" id="5Hj-MU-iGZ"/>
+                            <constraint firstItem="r4h-na-WbF" firstAttribute="leading" secondItem="rKJ-qq-IpR" secondAttribute="leading" id="NvC-92-U7z"/>
+                            <constraint firstItem="rKJ-qq-IpR" firstAttribute="bottom" secondItem="r4h-na-WbF" secondAttribute="bottom" id="TIw-kd-6hh"/>
+                            <constraint firstItem="rKJ-qq-IpR" firstAttribute="trailing" secondItem="r4h-na-WbF" secondAttribute="trailing" id="djY-Vq-l65"/>
                             <constraint firstItem="g2f-lP-FFZ" firstAttribute="top" secondItem="rKJ-qq-IpR" secondAttribute="top" id="iXj-kv-M8h"/>
                             <constraint firstItem="g2f-lP-FFZ" firstAttribute="leading" secondItem="rKJ-qq-IpR" secondAttribute="leading" id="qRV-P5-C2w"/>
+                            <constraint firstItem="r4h-na-WbF" firstAttribute="top" secondItem="g2f-lP-FFZ" secondAttribute="bottom" id="uC1-2Z-iTg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rKJ-qq-IpR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="YxM-gj-Dpq"/>
+                    <tabBarItem key="tabBarItem" title="Crime Reports" image="icons8-robbery-30" id="YxM-gj-Dpq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="crimesTableView" destination="r4h-na-WbF" id="S9Z-AS-muM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIM-s2-Bpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4180" y="-437"/>
+            <point key="canvasLocation" x="4179.7101449275369" y="-437.27678571428572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0qT-hF-dya">
@@ -458,7 +551,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" highlightedImage="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-S6-Sxd" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
-                                                    <rect key="frame" x="110" y="11" width="100" height="100"/>
+                                                    <rect key="frame" x="157" y="11" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="BqW-Qb-6NJ"/>
                                                         <constraint firstAttribute="height" constant="100" id="rjq-hM-55E"/>
@@ -474,19 +567,19 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kashif Rizwan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-pa-T4u">
-                                                    <rect key="frame" x="106.66666666666669" y="119" width="107" height="21"/>
+                                                    <rect key="frame" x="153.66666666666666" y="119" width="106.99999999999997" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-Gu-0jM">
-                                                    <rect key="frame" x="141.66666666666666" y="148" width="37" height="21"/>
+                                                    <rect key="frame" x="188.66666666666666" y="148" width="37" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W8u-rW-mme">
-                                                    <rect key="frame" x="150" y="51" width="20" height="20"/>
+                                                    <rect key="frame" x="197" y="51" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -516,7 +609,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-rG-YTx">
-                                                    <rect key="frame" x="58" y="19.666666666666664" width="236" height="21"/>
+                                                    <rect key="frame" x="58" y="19.666666666666664" width="326" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -737,11 +830,14 @@
     </scenes>
     <resources>
         <image name="background.jpg" width="1080" height="1920"/>
+        <image name="icons8-bank-card-missing-30" width="30" height="30"/>
         <image name="icons8-email-40" width="40" height="40"/>
         <image name="icons8-menu-24" width="32" height="32"/>
         <image name="icons8-name-tag-40" width="40" height="40"/>
         <image name="icons8-password-40" width="40" height="40"/>
+        <image name="icons8-robbery-30" width="30" height="30"/>
         <image name="icons8-sort-down-30" width="30" height="30"/>
+        <image name="icons8-strike-30" width="30" height="30"/>
         <image name="userProfile" width="512" height="424"/>
     </resources>
 </document>

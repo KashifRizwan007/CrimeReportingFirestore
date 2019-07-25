@@ -28,7 +28,7 @@ struct submitReport {
     }
     
     func submitReportData( completion: @escaping (_ error: String?) -> ()){
-        self.db.collection("reports").document(Auth.auth().currentUser!.uid).setData( ["type":self.type,"city":self.city,"contactNo":self.contactNo,"title":self.title,"descript":self.descript,"status":""], completion: {(error) in
+        self.db.collection("reports").document().setData( ["id":Auth.auth().currentUser!.uid,"type":self.type,"city":self.city,"contactNo":self.contactNo,"title":self.title,"descript":self.descript,"status":"Pending","imgUrl":staticLinker.userInformation.image], completion: {(error) in
             if let err = error{
                 completion(err.localizedDescription)
             }else{
