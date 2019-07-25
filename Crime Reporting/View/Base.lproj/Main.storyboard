@@ -148,7 +148,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="MA7-gY-R86">
                                             <color key="tintColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="n5x-oc-wSr"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="n5x-oc-wSr">
+                                            <connections>
+                                                <action selector="filter:" destination="29I-71-TVG" id="lHk-pG-wQZ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -173,6 +177,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="missingPersonsTableView" destination="58y-jl-3PD" id="JLm-6K-x3S"/>
+                        <outlet property="tabBarBadge" destination="UDJ-TL-Gmk" id="sqF-sV-6bW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQT-Z8-SPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,7 +187,7 @@
         <!--Complaints-->
         <scene sceneID="qSS-Rx-4GB">
             <objects>
-                <viewController id="zPr-1H-hzo" sceneMemberID="viewController">
+                <viewController id="zPr-1H-hzo" customClass="ComplaintsViewController" customModule="Crime_Reporting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUn-qL-zzN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,21 +199,37 @@
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-24" id="6s8-zS-9h3">
                                             <color key="tintColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="cuH-f3-svP"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="cuH-f3-svP">
+                                            <connections>
+                                                <action selector="filter:" destination="zPr-1H-hzo" id="FKQ-pZ-42C"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9hH-5N-PWU">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aTG-Y7-muu" firstAttribute="trailing" secondItem="ZRt-Gu-VVc" secondAttribute="trailing" id="0YN-Qn-gOa"/>
+                            <constraint firstItem="ZRt-Gu-VVc" firstAttribute="bottom" secondItem="9hH-5N-PWU" secondAttribute="bottom" id="4wd-OZ-wtK"/>
                             <constraint firstItem="aTG-Y7-muu" firstAttribute="top" secondItem="ZRt-Gu-VVc" secondAttribute="top" id="R42-fn-pKs"/>
+                            <constraint firstItem="9hH-5N-PWU" firstAttribute="leading" secondItem="ZRt-Gu-VVc" secondAttribute="leading" id="h8i-gN-Ldg"/>
                             <constraint firstItem="aTG-Y7-muu" firstAttribute="leading" secondItem="ZRt-Gu-VVc" secondAttribute="leading" id="klz-EH-ega"/>
+                            <constraint firstItem="ZRt-Gu-VVc" firstAttribute="trailing" secondItem="9hH-5N-PWU" secondAttribute="trailing" id="t7N-m8-ruh"/>
+                            <constraint firstItem="9hH-5N-PWU" firstAttribute="top" secondItem="aTG-Y7-muu" secondAttribute="bottom" id="vLb-Hn-ZAP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZRt-Gu-VVc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Complaints" image="icons8-strike-30" id="wP6-B2-rvb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="complaintsTableView" destination="9hH-5N-PWU" id="hVk-Ob-CEP"/>
+                        <outlet property="tabBarBadge" destination="wP6-B2-rvb" id="abT-wS-Cpd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBQ-yd-Rx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,7 +253,12 @@
                                                 <segue destination="V3z-tI-Ad7" kind="presentation" id="ABe-0r-Phl"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="0dQ-l2-3lL"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-filter-30" id="0dQ-l2-3lL">
+                                            <color key="tintColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="filter:" destination="WxF-Ct-qFV" id="hhP-Y2-k5f"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -321,10 +347,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rKJ-qq-IpR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Crime Reports" image="icons8-robbery-30" id="YxM-gj-Dpq"/>
+                    <tabBarItem key="tabBarItem" title="Crime Reports" image="icons8-evidence-30" id="YxM-gj-Dpq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="crimesTableView" destination="r4h-na-WbF" id="S9Z-AS-muM"/>
+                        <outlet property="tabBarBadge" destination="YxM-gj-Dpq" id="HG3-Qc-o7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIM-s2-Bpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,6 +366,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.1730640531" green="0.73874211310000004" blue="0.82913511989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="WxF-Ct-qFV" kind="relationship" relationship="viewControllers" id="Ns1-F5-Khq"/>
@@ -539,9 +567,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PPy-bg-V6n">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="x26-mB-lP9">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profile" rowHeight="188" id="N2p-Pm-vme" customClass="ProfileTableViewCell" customModule="Crime_Reporting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="188"/>
@@ -647,10 +678,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="BY2-Jf-Nwm" firstAttribute="trailing" secondItem="PPy-bg-V6n" secondAttribute="trailing" id="I31-UA-PaB"/>
                             <constraint firstItem="BY2-Jf-Nwm" firstAttribute="bottom" secondItem="x26-mB-lP9" secondAttribute="bottom" id="IV7-ud-pdN"/>
                             <constraint firstItem="x26-mB-lP9" firstAttribute="leading" secondItem="BY2-Jf-Nwm" secondAttribute="leading" id="WPw-I4-nHQ"/>
                             <constraint firstItem="x26-mB-lP9" firstAttribute="top" secondItem="BY2-Jf-Nwm" secondAttribute="top" id="bqt-Cd-LxO"/>
+                            <constraint firstItem="PPy-bg-V6n" firstAttribute="top" secondItem="BY2-Jf-Nwm" secondAttribute="top" id="lXi-B2-oyy"/>
+                            <constraint firstItem="PPy-bg-V6n" firstAttribute="leading" secondItem="BY2-Jf-Nwm" secondAttribute="leading" id="msi-GO-ZwY"/>
                             <constraint firstItem="BY2-Jf-Nwm" firstAttribute="trailing" secondItem="x26-mB-lP9" secondAttribute="trailing" id="qPs-fc-dvq"/>
+                            <constraint firstItem="BY2-Jf-Nwm" firstAttribute="bottom" secondItem="PPy-bg-V6n" secondAttribute="bottom" id="rI7-mV-7Td"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BY2-Jf-Nwm"/>
                     </view>
@@ -793,7 +828,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8y7-pW-92P"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AjT-3E-0Wz"/>
+                    <navigationItem key="navigationItem" id="AjT-3E-0Wz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CNx-5Z-RWz">
+                            <connections>
+                                <action selector="cancelBtn:" destination="P0x-aR-8Vf" id="Nd3-Zr-nFN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityOut" destination="XDa-t0-zVv" id="p6h-X5-IO3"/>
                         <outlet property="contactNoOut" destination="kRJ-tF-fO9" id="ugm-z5-Vav"/>
@@ -832,10 +873,11 @@
         <image name="background.jpg" width="1080" height="1920"/>
         <image name="icons8-bank-card-missing-30" width="30" height="30"/>
         <image name="icons8-email-40" width="40" height="40"/>
+        <image name="icons8-evidence-30" width="30" height="30"/>
+        <image name="icons8-filter-30" width="30" height="30"/>
         <image name="icons8-menu-24" width="32" height="32"/>
         <image name="icons8-name-tag-40" width="40" height="40"/>
         <image name="icons8-password-40" width="40" height="40"/>
-        <image name="icons8-robbery-30" width="30" height="30"/>
         <image name="icons8-sort-down-30" width="30" height="30"/>
         <image name="icons8-strike-30" width="30" height="30"/>
         <image name="userProfile" width="512" height="424"/>

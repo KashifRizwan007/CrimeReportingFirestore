@@ -1,18 +1,19 @@
 //
-//  CrimesViewController.swift
+//  ComplaintsViewController.swift
 //  Crime Reporting
 //
-//  Created by Kashif Rizwan on 7/24/19.
+//  Created by Kashif Rizwan on 7/25/19.
 //  Copyright © 2019 Kashif Rizwan. All rights reserved.
 //
 
 import UIKit
 
-class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource{
-
-    @IBOutlet weak var crimesTableView: UITableView!
+class ComplaintsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    
+    @IBOutlet weak var complaintsTableView: UITableView!
     @IBOutlet weak var tabBarBadge: UITabBarItem!
-    private var crimesDataList:[report]!
+    private var complaintsDataList:[report]!
     private var msg = "Loading..."
     var refreshControl = UIRefreshControl()
     var boxView = UIView()
@@ -24,15 +25,15 @@ class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.crimesTableView.delegate = self
-        self.crimesTableView.dataSource = self
-        //self.crimesTableView.separatorColor = .black
-        //self.crimesTableView.layoutMargins = UIEdgeInsets.zero
-        //self.crimesTableView.separatorInset = UIEdgeInsets.zero
+        self.complaintsTableView.delegate = self
+        self.complaintsTableView.dataSource = self
+        self.complaintsTableView.separatorColor = .black
+        self.complaintsTableView.layoutMargins = UIEdgeInsets.zero
+        self.complaintsTableView.separatorInset = UIEdgeInsets.zero
         self.loadData()
-        crimesTableView.rowHeight = UITableView.automaticDimension
-        crimesTableView.estimatedRowHeight = 108
-        crimesTableView.refreshControl = self.refreshControl
+        complaintsTableView.rowHeight = UITableView.automaticDimension
+        complaintsTableView.estimatedRowHeight = 108
+        complaintsTableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
@@ -44,7 +45,7 @@ class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewData
             preferredStyle: .alert)
         
         let pickerView = UIPickerView(frame:
-            CGRect(x: 0, y: 50, width: 260, height: 130))
+            CGRect(x: 0, y: 50, width: 260, height: 142))
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
@@ -52,7 +53,7 @@ class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             self.loadData()
-            self.crimesTableView.reloadData()
+            self.complaintsTableView.reloadData()
         }))
         
         alertView.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -61,10 +62,10 @@ class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewData
             pickerView.frame.size.width = alertView.view.frame.size.width
         })
     }
-
+    
 }
 
-extension CrimesViewController{
+extension ComplaintsViewController{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -105,28 +106,28 @@ extension CrimesViewController{
         if self.filterChoice == "All"{
             self.filterChoice = nil
         }
-        gsdDataObj.getCrimesReports(filter: self.filterChoice, completion: {(error, crimeData) in
+        gsdDataObj.getMissingReports(filter: self.filterChoice, completion: {(error, crimeData) in
             DispatchQueue.main.async {
                 self.refreshControl.beginRefreshing()
                 self.filterChoice = "All"
                 if let err = error{
                     self.msg = err
-                    self.crimesDataList = nil
-                    self.crimesTableView.reloadData()
+                    self.complaintsDataList = nil
+                    self.complaintsTableView.reloadData()
                     self.refreshControl.endRefreshing()
                 }else{
                     self.refreshControl.endRefreshing()
                     if crimeData != nil{
-                        self.crimesDataList = crimeData
-                        self.crimesTableView.reloadData()
+                        self.complaintsDataList = crimeData
+                        self.complaintsTableView.reloadData()
                     }else{
                         self.msg = "No Crime Reports"
-                        self.crimesDataList = nil
-                        self.crimesTableView.reloadData()
+                        self.complaintsDataList = nil
+                        self.complaintsTableView.reloadData()
                     }
                 }
-                if self.crimesDataList != nil{
-                    self.tabBarBadge.badgeValue = String(self.crimesDataList.count)
+                if self.complaintsDataList != nil{
+                    self.tabBarBadge.badgeValue = String(self.complaintsDataList.count)
                     self.tabBarBadge.badgeColor = .black
                 }else{
                     self.tabBarBadge.badgeValue = "0"
@@ -137,9 +138,9 @@ extension CrimesViewController{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.data = self.crimesDataList[indexPath.row]
+        self.data = self.complaintsDataList[indexPath.row]
         //self.performSegue(withIdentifier: "viewTodo", sender: self)
-        self.crimesTableView.deselectRow(at: indexPath, animated: true)
+        self.complaintsTableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,31 +153,31 @@ extension CrimesViewController{
     func numberOfSections(in tableView: UITableView) -> Int {
         var numOfSection: NSInteger = 0
         
-        if self.crimesDataList != nil {
-            self.crimesTableView.tableFooterView = UIView()
+        if self.complaintsDataList != nil {
+            self.complaintsTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
             
-            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.crimesTableView.bounds.size.width, height: self.crimesTableView.bounds.size.height))
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.complaintsTableView.bounds.size.width, height: self.complaintsTableView.bounds.size.height))
             noDataLabel.text = msg
             noDataLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
             noDataLabel.textAlignment = NSTextAlignment.center
-            self.crimesTableView.tableFooterView = noDataLabel
+            self.complaintsTableView.tableFooterView = noDataLabel
             
         }
         return numOfSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return crimesDataList.count
+        return complaintsDataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reportsCell") as! ReportsTableViewCell
         cell.layoutMargins = UIEdgeInsets.zero
-        cell.title.text = self.crimesDataList[indexPath.row].title
-        cell.city.text = self.crimesDataList[indexPath.row].city
-        if self.crimesDataList[indexPath.row].imgUrl != ""{
+        cell.title.text = self.complaintsDataList[indexPath.row].title
+        cell.city.text = self.complaintsDataList[indexPath.row].city
+        if self.complaintsDataList[indexPath.row].imgUrl != ""{
             if let image = staticLinker.img{
                 cell.loader.stopAnimating()
                 cell.profileImage.image = image
@@ -207,7 +208,7 @@ extension CrimesViewController{
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete selected item?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
                 self._loader()
-                self.gsdDataObj.deleteReport(id: self.crimesDataList[indexPath.row].reportId, completion: {(_) in
+                self.gsdDataObj.deleteReport(id: self.complaintsDataList[indexPath.row].reportId, completion: {(_) in
                     self.boxView.removeFromSuperview()
                     self.loadData()
                 })

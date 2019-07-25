@@ -11,6 +11,7 @@ import UIKit
 class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource{
     
     @IBOutlet weak var missingPersonsTableView: UITableView!
+    @IBOutlet weak var tabBarBadge: UITabBarItem!
     private var missingPersonsDataList:[report]!
     private var msg = "Loading..."
     var refreshControl = UIRefreshControl()
@@ -124,6 +125,13 @@ extension MissingPersonsViewController{
                         self.missingPersonsTableView.reloadData()
                     }
                 }
+                if self.missingPersonsDataList != nil{
+                    self.tabBarBadge.badgeValue = String(self.missingPersonsDataList.count)
+                    self.tabBarBadge.badgeColor = .black
+                }else{
+                    self.tabBarBadge.badgeValue = "0"
+                    self.tabBarBadge.badgeColor = .red
+                }
             }
         })
     }
@@ -182,7 +190,6 @@ extension MissingPersonsViewController{
                             loader.startAnimating()
                             cell.loader.stopAnimating()
                             cell.profileImage.image = UIImage(data: data)
-                            staticLinker.img = cell.profileImage.image
                         }
                     }
                 }).resume()

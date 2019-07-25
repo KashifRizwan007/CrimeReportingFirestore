@@ -31,6 +31,9 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         loader.hidesWhenStopped = true
     }
     
+    @IBAction func cancelBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func submit(_ sender: Any) {
         self.loader.startAnimating()
         self.submitOut.isEnabled = false
