@@ -18,8 +18,9 @@ struct report {
     var type : String
     var reportId : String
     var imgUrl:String
+    var date:String
     
-    init(city : String, contactNo : String, descript : String, id : String, status : String, title : String, type : String, reportId : String, imgUrl:String){
+    init(city : String, contactNo : String, descript : String, id : String, status : String, title : String, type : String, reportId : String, imgUrl:String, date:String){
         self.city = city
         self.contactNo = contactNo
         self.descript = descript
@@ -29,5 +30,6 @@ struct report {
         self.type = type
         self.reportId = reportId
         self.imgUrl = imgUrl
+        self.date = date
     }
 }

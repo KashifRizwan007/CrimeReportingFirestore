@@ -21,11 +21,17 @@ class LoginViewController: UIViewController,signInFill {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     private var loginObj:loginRequest!
+    var hidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         self.loader.isHidden = true
         self.loader.hidesWhenStopped = true
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +41,7 @@ class LoginViewController: UIViewController,signInFill {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = hidden
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +55,7 @@ class LoginViewController: UIViewController,signInFill {
     }
     
     @IBAction func signInBtn(_ sender: Any) {
+        hidden = true
         self.loader.startAnimating()
         self.signBtnOut.isEnabled = false
         self.emailField.text = "kashifrizwan3857@gmail.com"

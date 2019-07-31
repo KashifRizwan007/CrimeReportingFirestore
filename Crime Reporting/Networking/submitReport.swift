@@ -18,17 +18,19 @@ struct submitReport {
     var contactNo:String
     var title:String
     var descript:String
+    var date:String
     
-    init(type:String, city:String, contactNo:String, title:String, descript:String) {
+    init(type:String, city:String, contactNo:String, title:String, descript:String, date:String) {
         self.type = type
         self.city = city
         self.contactNo = contactNo
         self.title = title
         self.descript = descript
+        self.date = date
     }
     
     func submitReportData( completion: @escaping (_ error: String?) -> ()){
-        self.db.collection("reports").document().setData( ["id":Auth.auth().currentUser!.uid,"type":self.type,"city":self.city,"contactNo":self.contactNo,"title":self.title,"descript":self.descript,"status":"Pending","imgUrl":staticLinker.userInformation.image], completion: {(error) in
+        self.db.collection("reports").document().setData( ["id":Auth.auth().currentUser!.uid,"type":self.type,"city":self.city,"contactNo":self.contactNo,"title":self.title,"descript":self.descript,"status":"Pending","imgUrl":staticLinker.userInformation.image, "date":self.date], completion: {(error) in
             if let err = error{
                 completion(err.localizedDescription)
             }else{

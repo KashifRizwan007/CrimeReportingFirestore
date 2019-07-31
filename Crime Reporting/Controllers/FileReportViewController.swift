@@ -18,17 +18,24 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     @IBOutlet weak var titleOut: UITextField!
     @IBOutlet weak var submitOut: ButtonDesign!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var reportDate: textFieldDesign!
     
     var city = ["Karachi","Lahore","Islamabad","Rawalpindi"]
     var type = ["Missing Person","Crime","Complaint"]
     var pickerView = UIPickerView()
     var submitObj:submitReport!
+    let datePicker = UIDatePicker()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         loader.isHidden = true
         loader.hidesWhenStopped = true
+        showDatePicker()
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -37,8 +44,8 @@ class FileReportViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
     @IBAction func submit(_ sender: Any) {
         self.loader.startAnimating()
         self.submitOut.isEnabled = false
-        if let type = self.reportType.text, let city = self.cityOut.text, let contactNo = self.contactNoOut.text, let title = self.titleOut.text, let descript = self.descritpionOut.text{
-            self.submitObj = submitReport(type: type, city: city, contactNo: contactNo, title: title, descript: descript)
+        if let type = self.reportType.text, let city = self.cityOut.text, let contactNo = self.contactNoOut.text, let title = self.titleOut.text, let descript = self.descritpionOut.text, let date = self.reportDate.text{
+            self.submitObj = submitReport(type: type, city: city, contactNo: contactNo, title: title, descript: descript, date:date)
             self.submitObj.submitReportData( completion: {(error) in
                 self.loader.stopAnimating()
                 self.submitOut.isEnabled = true
@@ -107,5 +114,35 @@ extension FileReportViewController{
         self.pickerView.reloadAllComponents()
         
         self.currentTextField.inputView = pickerView
+    }
+    
+    private func showDatePicker(){
+        //Formate Date
+        self.datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: true)
+        
+        reportDate.inputAccessoryView = toolbar
+        reportDate.inputView = datePicker
+        
+    }
+    
+    @objc private func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        reportDate.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc private func cancelPicker(){
+        self.view.endEditing(true)
     }
 }

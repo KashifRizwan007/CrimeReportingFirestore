@@ -18,6 +18,7 @@ struct reportCodable: Codable {
     let title : String?
     let type : String?
     let imageUrl : String?
+    let date : String?
     
     enum CodingKeys: String, CodingKey {
         case city = "city"
@@ -28,6 +29,7 @@ struct reportCodable: Codable {
         case title = "title"
         case type = "type"
         case imageUrl = "imgUrl"
+        case date = "date"
     }
     
     init(from decoder: Decoder) throws {
@@ -40,6 +42,7 @@ struct reportCodable: Codable {
         title = try values.decodeIfPresent(String.self, forKey: .title)
         type = try values.decodeIfPresent(String.self, forKey: .type)
         imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
+        date = try values.decodeIfPresent(String.self, forKey: .date)
     }
     
 }
