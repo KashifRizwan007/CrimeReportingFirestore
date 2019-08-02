@@ -12,8 +12,6 @@
 		1203992422E1C3F500DBD7B0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */; };
 		1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992622E1C90A00DBD7B0 /* staticLinker.swift */; };
 		1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992822E1CA9700DBD7B0 /* userInfo.swift */; };
-		12041D6722EC3583008D1E72 /* ReportDetailsUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12041D6622EC3583008D1E72 /* ReportDetailsUserViewController.swift */; };
-		12041D6922EC3595008D1E72 /* ReportDetailsAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12041D6822EC3595008D1E72 /* ReportDetailsAdminViewController.swift */; };
 		1223E1DB22E8412B00C3AF5B /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DA22E8412B00C3AF5B /* ReportsTableViewCell.swift */; };
 		1223E1DD22E8421A00C3AF5B /* gsdData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DC22E8421A00C3AF5B /* gsdData.swift */; };
 		1223E1DF22E8429700C3AF5B /* reportsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DE22E8429700C3AF5B /* reportsCodable.swift */; };
@@ -32,12 +30,16 @@
 		123A7C6922DEFFA8007445DC /* UIImageViewRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C6822DEFFA8007445DC /* UIImageViewRounded.swift */; };
 		123A7C6C22DF01D8007445DC /* loginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C6B22DF01D8007445DC /* loginRequest.swift */; };
 		123A7C6E22DF05E1007445DC /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 123A7C6D22DF05E0007445DC /* background.jpg */; };
-		123A7C7022DF095D007445DC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C6F22DF095D007445DC /* InitialViewController.swift */; };
+		123A7C7022DF095D007445DC /* InitialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C6F22DF095D007445DC /* InitialLoginViewController.swift */; };
 		123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C7122DF099F007445DC /* SignUpRequest.swift */; };
 		125F6EC322E2EC5B00C50470 /* FileReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */; };
 		125F6EC522E2F1B200C50470 /* submitReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F6EC422E2F1B200C50470 /* submitReport.swift */; };
 		126B28B822EEE3C400DD4991 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126B28B722EEE3C400DD4991 /* ReportsViewController.swift */; };
+		127E0B1322F3166300541DED /* userProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 127E0B1222F3166200541DED /* userProfile.png */; };
 		12A4B1BF22E9986600E6F3DD /* ComplaintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A4B1BE22E9986600E6F3DD /* ComplaintsViewController.swift */; };
+		12FFCCAB22F4250A0037E5C4 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFCCAA22F4250A0037E5C4 /* InitialViewController.swift */; };
+		12FFCCAF22F466520037E5C4 /* getUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFCCAE22F466520037E5C4 /* getUserData.swift */; };
+		12FFCCB122F46B540037E5C4 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFCCB022F46B540037E5C4 /* RouteManager.swift */; };
 		25F4FECB3450243D7F17F49B /* Pods_Crime_Reporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BBE73E3DA639A89CEFA56D /* Pods_Crime_Reporting.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +50,6 @@
 		1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1203992622E1C90A00DBD7B0 /* staticLinker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staticLinker.swift; sourceTree = "<group>"; };
 		1203992822E1CA9700DBD7B0 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
-		12041D6622EC3583008D1E72 /* ReportDetailsUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsUserViewController.swift; sourceTree = "<group>"; };
-		12041D6822EC3595008D1E72 /* ReportDetailsAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsAdminViewController.swift; sourceTree = "<group>"; };
 		1223E1DA22E8412B00C3AF5B /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		1223E1DC22E8421A00C3AF5B /* gsdData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gsdData.swift; sourceTree = "<group>"; };
 		1223E1DE22E8429700C3AF5B /* reportsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportsCodable.swift; sourceTree = "<group>"; };
@@ -70,12 +70,16 @@
 		123A7C6822DEFFA8007445DC /* UIImageViewRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewRounded.swift; sourceTree = "<group>"; };
 		123A7C6B22DF01D8007445DC /* loginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginRequest.swift; sourceTree = "<group>"; };
 		123A7C6D22DF05E0007445DC /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		123A7C6F22DF095D007445DC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		123A7C6F22DF095D007445DC /* InitialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginViewController.swift; sourceTree = "<group>"; };
 		123A7C7122DF099F007445DC /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReportViewController.swift; sourceTree = "<group>"; };
 		125F6EC422E2F1B200C50470 /* submitReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submitReport.swift; sourceTree = "<group>"; };
 		126B28B722EEE3C400DD4991 /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
+		127E0B1222F3166200541DED /* userProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userProfile.png; sourceTree = "<group>"; };
 		12A4B1BE22E9986600E6F3DD /* ComplaintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsViewController.swift; sourceTree = "<group>"; };
+		12FFCCAA22F4250A0037E5C4 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		12FFCCAE22F466520037E5C4 /* getUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getUserData.swift; sourceTree = "<group>"; };
+		12FFCCB022F46B540037E5C4 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		1D85E0BFB96269B944A0E207 /* Pods-Crime Reporting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crime Reporting.debug.xcconfig"; path = "Target Support Files/Pods-Crime Reporting/Pods-Crime Reporting.debug.xcconfig"; sourceTree = "<group>"; };
 		4A03A5EB602E6DDF672EE7E0 /* Pods-Crime Reporting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crime Reporting.release.xcconfig"; path = "Target Support Files/Pods-Crime Reporting/Pods-Crime Reporting.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +135,7 @@
 				123A7C6A22DF01BA007445DC /* Networking */,
 				123A7C5D22DEF047007445DC /* GoogleService-Info.plist */,
 				123A7C5722DEEF31007445DC /* Info.plist */,
+				127E0B1222F3166200541DED /* userProfile.png */,
 				123A7C5222DEEF31007445DC /* Assets.xcassets */,
 				123A7C6D22DF05E0007445DC /* background.jpg */,
 			);
@@ -157,15 +162,15 @@
 			children = (
 				123A7C4D22DEEF2F007445DC /* LoginViewController.swift */,
 				123A7C6622DEFD68007445DC /* SignUpViewController.swift */,
-				123A7C6F22DF095D007445DC /* InitialViewController.swift */,
+				123A7C6F22DF095D007445DC /* InitialLoginViewController.swift */,
+				12FFCCAA22F4250A0037E5C4 /* InitialViewController.swift */,
 				1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */,
 				125F6EC222E2EC5B00C50470 /* FileReportViewController.swift */,
 				1223E1E222E8534200C3AF5B /* CrimesViewController.swift */,
 				1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */,
 				12A4B1BE22E9986600E6F3DD /* ComplaintsViewController.swift */,
-				12041D6622EC3583008D1E72 /* ReportDetailsUserViewController.swift */,
-				12041D6822EC3595008D1E72 /* ReportDetailsAdminViewController.swift */,
 				126B28B722EEE3C400DD4991 /* ReportsViewController.swift */,
+				12FFCCB022F46B540037E5C4 /* RouteManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				123A7C7122DF099F007445DC /* SignUpRequest.swift */,
 				125F6EC422E2F1B200C50470 /* submitReport.swift */,
 				1223E1DC22E8421A00C3AF5B /* gsdData.swift */,
+				12FFCCAE22F466520037E5C4 /* getUserData.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				123A7C6E22DF05E1007445DC /* background.jpg in Resources */,
 				123A7C5622DEEF31007445DC /* LaunchScreen.storyboard in Resources */,
+				127E0B1322F3166300541DED /* userProfile.png in Resources */,
 				123A7C5E22DEF047007445DC /* GoogleService-Info.plist in Resources */,
 				123A7C5322DEEF31007445DC /* Assets.xcassets in Resources */,
 				123A7C5122DEEF2F007445DC /* Main.storyboard in Resources */,
@@ -316,18 +323,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				123A7C6C22DF01D8007445DC /* loginRequest.swift in Sources */,
+				12FFCCAF22F466520037E5C4 /* getUserData.swift in Sources */,
 				123A7C6022DEF60D007445DC /* textFieldDesign.swift in Sources */,
 				1203992422E1C3F500DBD7B0 /* MenuTableViewCell.swift in Sources */,
 				1223E1DF22E8429700C3AF5B /* reportsCodable.swift in Sources */,
 				1223E1E922E87DDE00C3AF5B /* MissingPersonsViewController.swift in Sources */,
+				12FFCCB122F46B540037E5C4 /* RouteManager.swift in Sources */,
 				123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */,
 				12A4B1BF22E9986600E6F3DD /* ComplaintsViewController.swift in Sources */,
 				1203992222E1C3E100DBD7B0 /* ProfileTableViewCell.swift in Sources */,
-				12041D6722EC3583008D1E72 /* ReportDetailsUserViewController.swift in Sources */,
 				123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */,
 				1223E1E122E848AB00C3AF5B /* report.swift in Sources */,
 				125F6EC322E2EC5B00C50470 /* FileReportViewController.swift in Sources */,
-				12041D6922EC3595008D1E72 /* ReportDetailsAdminViewController.swift in Sources */,
 				1223E1E322E8534200C3AF5B /* CrimesViewController.swift in Sources */,
 				1223E1DB22E8412B00C3AF5B /* ReportsTableViewCell.swift in Sources */,
 				1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */,
@@ -337,10 +344,11 @@
 				1223E1DD22E8421A00C3AF5B /* gsdData.swift in Sources */,
 				123A7C6722DEFD68007445DC /* SignUpViewController.swift in Sources */,
 				123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */,
+				12FFCCAB22F4250A0037E5C4 /* InitialViewController.swift in Sources */,
 				126B28B822EEE3C400DD4991 /* ReportsViewController.swift in Sources */,
 				125F6EC522E2F1B200C50470 /* submitReport.swift in Sources */,
 				1203992022E1BF3500DBD7B0 /* SideMenuViewController.swift in Sources */,
-				123A7C7022DF095D007445DC /* InitialViewController.swift in Sources */,
+				123A7C7022DF095D007445DC /* InitialLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

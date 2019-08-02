@@ -14,6 +14,10 @@ class ReportsTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var descript: UILabel!
+    @IBOutlet weak var contact: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var statusBtn: ButtonDesign!
     
     override func awakeFromNib() {
         super.awakeFromNib()

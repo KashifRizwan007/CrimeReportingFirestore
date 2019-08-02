@@ -72,7 +72,11 @@ class LoginViewController: UIViewController,signInFill {
                 }else{
                     let alert = UIAlertController(title: "Success", message: "You are logged into your account.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_) in
-                        self.performSegue(withIdentifier: "toDashboard", sender: nil)
+                        // setting the login status to true
+                        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                        UserDefaults.standard.synchronize()
+                        RouteManager.shared.showHome()
+                        //self.performSegue(withIdentifier: "toDashboard", sender: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }

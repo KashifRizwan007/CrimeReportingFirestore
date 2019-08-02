@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import SideMenu
 
 @UIApplicationMain
@@ -15,10 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        SideMenuManager.default.menuPushStyle = .subMenu
+        
         FirebaseApp.configure()
         SideMenuManager.default.menuFadeStatusBar = false
+        
+        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        
+        if userLoginStatus, let _ = Auth.auth().currentUser{
+            RouteManager.shared.showHome()
+        }
         return true
     }
 

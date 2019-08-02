@@ -8,14 +8,15 @@
 
 import UIKit
 import SideMenu
+import FirebaseAuth
 
 class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var menuTableView: UITableView!
     var userMenu:[[String]]!
-    var userChoice = [["User"],["Dashboard","File A Report"]]//,"View My Reports"]]
-    var adminChoice = [["Admin"],["Dashboard"]]
-    var imageNames = ["dashboard","add","view"]
+    var userChoice = [["User"],["Dashboard","File A Report"],["Sign-Out"]]
+    var adminChoice = [["Admin"],["Dashboard"],["Sign-Out"]]
+    var imageNames = ["dashboard","add","view","signout"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,32 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
 extension SideMenuViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 0 && indexPath.row == 0{
+        print(indexPath)
+        if indexPath.section == 2 && indexPath.row == 0{
+            let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to Sign Out?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(_) in
+                do {
+                    try Auth.auth().signOut()
+                    UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                    UserDefaults.standard.synchronize()
+                    self.dismiss(animated: true, completion: self.logOut)
+                } catch let err {
+                    let _alert = UIAlertController(title: "Alert", message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    _alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(_alert, animated: true, completion: nil)
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if indexPath.section != 0 && indexPath.row == 0{
             self.dismiss(animated: true, completion: nil)
         }else if indexPath.section != 0 && indexPath.row == 1{
             self.performSegue(withIdentifier: "fileReport", sender: nil)
         }
+    }
+    
+    func logOut(){
+        RouteManager.shared.showLogin()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

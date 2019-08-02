@@ -8,12 +8,7 @@
 
 import UIKit
 
-class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,loadChange{
-    
-    func loadAllData() {
-        self.loadData()
-    }
-    
+class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource{
     
     @IBOutlet weak var missingPersonsTableView: UITableView!
     @IBOutlet weak var tabBarBadge: UITabBarItem!
@@ -32,17 +27,86 @@ class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableV
     var pickerChoice:[String]!
     private var status = false
     private var filterStatus = false
+    private var currentCell:ReportsTableViewCell!
+    private var gudObj = getUserData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataListner()
+        self.missingPersonsDataListListner = nil
+        self.msg = "Loading"
+        self.initialize()
         self.missingPersonsTableView.delegate = self
         self.missingPersonsTableView.dataSource = self
-        self.loadData()
         missingPersonsTableView.rowHeight = UITableView.automaticDimension
         missingPersonsTableView.estimatedRowHeight = 108
         missingPersonsTableView.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    @IBAction func statusBtnOut(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Report Status", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Pending", style: .default, handler: {(_) in
+            self.currentCell.statusBtn.setTitle("Pending", for: .normal)
+            self.currentCell.statusBtn.backgroundColor = .yellow
+            self.changeStatus()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Inprogress", style: .default, handler: {(_) in
+            self.currentCell.statusBtn.setTitle("Inprogress", for: .normal)
+            self.currentCell.statusBtn.backgroundColor = .blue
+            self.changeStatus()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Completed", style: .default, handler: {(_) in
+            self.currentCell.statusBtn.setTitle("Completed", for: .normal)
+            self.currentCell.statusBtn.backgroundColor = .green
+            self.changeStatus()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Rejected", style: .default, handler: {(_) in
+            self.currentCell.statusBtn.setTitle("Rejected", for: .normal)
+            self.currentCell.statusBtn.backgroundColor = .red
+            self.changeStatus()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func changeStatus(){
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to update status?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            self._loader(label: "Updating")
+            self.gsdDataObj.updateStatus(status:self.currentCell.statusBtn!.titleLabel!.text!, id: self.data.reportId, completion: {(error) in
+                self.boxView.removeFromSuperview()
+                let alert = UIAlertController(title: "Done", message: nil, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(_) in
+            self.missingPersonsTableView.reloadData()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func initialize(){
+        if staticLinker.userInformation != nil{
+            self.dataListner()
+        }else{
+            gudObj.getData(completion: {(error,userData) in
+                if let err = error{
+                    let alert = UIAlertController(title: "Error", message: err, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_) in
+                        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                        UserDefaults.standard.synchronize()
+                        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialLoginViewController") as! InitialLoginViewController
+                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                        appDel.window?.rootViewController = loginVC
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }else{
+                    staticLinker.userInformation = userData
+                    self.dataListner()
+                }
+            })
+        }
     }
     
     func dataListner(){
@@ -102,6 +166,14 @@ class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableV
     
     private func pickerVIewGenerator(label:String){
         self.status = false
+        self.filterStatus = false
+        if self.status == false{
+            if self.pickerChoice == self.pickerViewCityGroups{
+                self.filterChoiceCity = "All"
+            }else if self.pickerChoice == self.pickerViewReportStatusGroups{
+                self.filterChoiceReportStatus = "All"
+            }
+        }
         let alertView = UIAlertController(
             title: "Select \(label)",
             message: "\n\n\n\n\n\n\n",
@@ -115,15 +187,8 @@ class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableV
         alertView.view.addSubview(pickerView)
         
         alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            if self.status == false{
-                if self.pickerChoice == self.pickerViewCityGroups{
-                    self.filterChoiceCity = "All"
-                }else if self.pickerChoice == self.pickerViewReportStatusGroups{
-                    self.filterChoiceReportStatus = "All"
-                }
-            }
+            self.refreshControl.beginRefreshing()
             self.loadData()
-            self.missingPersonsTableView.reloadData()
         }))
         
         alertView.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -132,7 +197,6 @@ class MissingPersonsViewController:UIViewController,UITableViewDelegate,UITableV
             pickerView.frame.size.width = alertView.view.frame.size.width
         })
     }
-    
 }
 
 extension MissingPersonsViewController{
@@ -148,6 +212,7 @@ extension MissingPersonsViewController{
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.status = true
+        self.filterStatus = true
         if self.pickerChoice == self.pickerViewCityGroups{
             self.filterChoiceCity = self.pickerChoice[row]
         }else{
@@ -155,7 +220,7 @@ extension MissingPersonsViewController{
         }
     }
     
-    private func _loader() {
+    private func _loader(label: String) {
         // You only need to adjust this frame to move it anywhere you want
         boxView = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25, width: 180, height: 50))
         boxView.backgroundColor = UIColor.white
@@ -169,7 +234,7 @@ extension MissingPersonsViewController{
         
         let textLabel = UILabel(frame: CGRect(x: 60, y: 0, width: 200, height: 50))
         textLabel.textColor = UIColor.gray
-        textLabel.text = "Deleting..."
+        textLabel.text = "\(label)..."
         
         boxView.addSubview(activityView)
         boxView.addSubview(textLabel)
@@ -178,71 +243,60 @@ extension MissingPersonsViewController{
     }
     
     @objc func loadData(){
-        if (self.filterChoiceCity == "All" && self.filterChoiceReportStatus == "All" && staticLinker.userInformation.userType == "admin") || (self.filterChoiceCity == "All" && staticLinker.userInformation.userType == "user"){
-            self.filterStatus = false
+        if (self.filterChoiceCity == "All" && self.filterChoiceReportStatus == "All" && staticLinker.userInformation.userType == "admin") || (self.filterChoiceCity == "All" && staticLinker.userInformation.userType == "user") || self.filterStatus == false{
+            self.missingPersonsTableView.reloadData()
+            self.refreshControl.endRefreshing()
         }else{
-            self.filterStatus = true
-            if self.filterChoiceCity == "All"{
-                self.filterChoiceCity = nil
-            }
-            if self.filterChoiceReportStatus == "All"{
-                self.filterChoiceReportStatus = nil
-            }
-            gsdDataObj.getMissingReports(filter1: self.filterChoiceCity, filter2: filterChoiceReportStatus, completion: {(error, crimeData) in
-                DispatchQueue.main.async {
-                    self.refreshControl.beginRefreshing()
-                    if let err = error{
-                        self.msg = err
-                        self.missingPersonsDataList = nil
-                        self.missingPersonsTableView.reloadData()
-                        self.refreshControl.endRefreshing()
-                    }else{
-                        self.refreshControl.endRefreshing()
-                        if crimeData != nil{
-                            self.missingPersonsDataList = crimeData
-                            self.missingPersonsTableView.reloadData()
-                        }else{
-                            self.msg = "No Crime Reports"
+            if self.filterStatus == true{
+                if self.filterChoiceCity == "All"{
+                    self.filterChoiceCity = nil
+                }
+                if self.filterChoiceReportStatus == "All"{
+                    self.filterChoiceReportStatus = nil
+                }
+                gsdDataObj.getMissingReports(filter1: self.filterChoiceCity, filter2: filterChoiceReportStatus, completion: {(error, crimeData) in
+                    DispatchQueue.main.async {
+                        self.refreshControl.beginRefreshing()
+                        if let err = error{
+                            self.msg = err
                             self.missingPersonsDataList = nil
                             self.missingPersonsTableView.reloadData()
+                            self.refreshControl.endRefreshing()
+                        }else{
+                            self.refreshControl.endRefreshing()
+                            if crimeData != nil{
+                                self.missingPersonsDataList = crimeData
+                                self.missingPersonsTableView.reloadData()
+                            }else{
+                                self.msg = "No Crime Reports"
+                                self.missingPersonsDataList = nil
+                                self.missingPersonsTableView.reloadData()
+                            }
                         }
                     }
-                    if self.missingPersonsDataList != nil{
-                        self.tabBarBadge.badgeValue = String(self.missingPersonsDataList.count)
-                        self.tabBarBadge.badgeColor = .black
-                    }else{
-                        self.tabBarBadge.badgeValue = "0"
-                        self.tabBarBadge.badgeColor = .red
-                    }
-                }
-            })
+                })
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if self.missingPersonsTableView.indexPathForSelectedRow?.row == indexPath.row && missingPersonsTableView.cellForRow(at: indexPath)?.bounds.height == 102{
+            return UITableView.automaticDimension;
+        }else{
+            return 102;
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.currentCell = (tableView.cellForRow(at: indexPath) as! ReportsTableViewCell)
+        self.missingPersonsTableView.beginUpdates()
+        self.missingPersonsTableView.endUpdates()
         if filterStatus == false{
             self.data = self.missingPersonsDataListListner[indexPath.row]
         }else{
             self.data = self.missingPersonsDataList[indexPath.row]
         }
-        if staticLinker.userInformation.userType == "user"{
-            self.performSegue(withIdentifier: "showMissingUser", sender: self)
-        }else{
-            self.performSegue(withIdentifier: "showMissingAdmin", sender: self)
-        }
         self.missingPersonsTableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMissingUser"{
-            let viewTodocontroller = segue.destination as? ReportDetailsUserViewController
-            viewTodocontroller!.report = self.data
-        
-        }else if segue.identifier == "showMissingAdmin"{
-            let viewTodocontroller = segue.destination as? ReportDetailsAdminViewController
-            viewTodocontroller?.delegate = self
-            viewTodocontroller!.report = self.data
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -252,13 +306,11 @@ extension MissingPersonsViewController{
             self.missingPersonsTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
-            
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.missingPersonsTableView.bounds.size.width, height: self.missingPersonsTableView.bounds.size.height))
             noDataLabel.text = msg
             noDataLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
             noDataLabel.textAlignment = NSTextAlignment.center
             self.missingPersonsTableView.tableFooterView = noDataLabel
-            
         }
         return numOfSection
     }
@@ -277,15 +329,26 @@ extension MissingPersonsViewController{
         if filterStatus == false{
             cell.title.text = self.missingPersonsDataListListner[indexPath.row].title
             cell.city.text = self.missingPersonsDataListListner[indexPath.row].city
+            cell.descript.text = self.missingPersonsDataListListner[indexPath.row].descript
+            cell.date.text = self.missingPersonsDataListListner[indexPath.row].date
+            cell.contact.text = self.missingPersonsDataListListner[indexPath.row].contactNo
             switch self.missingPersonsDataListListner[indexPath.row].status{
             case "Pending":
                 cell.profileImage.borderColor = .yellow
+                cell.statusBtn.setTitle("Pending", for: .normal)
+                cell.statusBtn.backgroundColor = .yellow
             case "Inprogress":
                 cell.profileImage.borderColor = .blue
+                cell.statusBtn.setTitle("Inprogress", for: .normal)
+                cell.statusBtn.backgroundColor = .blue
             case "Completed":
                 cell.profileImage.borderColor = .green
+                cell.statusBtn.setTitle("Completed", for: .normal)
+                cell.statusBtn.backgroundColor = .green
             default:
                 cell.profileImage.borderColor = .red
+                cell.statusBtn.setTitle("Rejected", for: .normal)
+                cell.statusBtn.backgroundColor = .red
             }
             if self.missingPersonsDataListListner[indexPath.row].imgUrl != ""{
                 URLSession.shared.dataTask( with: URL(string: self.missingPersonsDataListListner[indexPath.row].imgUrl)!, completionHandler: {
@@ -304,15 +367,26 @@ extension MissingPersonsViewController{
         }else{
             cell.title.text = self.missingPersonsDataList[indexPath.row].title
             cell.city.text = self.missingPersonsDataList[indexPath.row].city
+            cell.descript.text = self.missingPersonsDataListListner[indexPath.row].descript
+            cell.date.text = self.missingPersonsDataListListner[indexPath.row].date
+            cell.contact.text = self.missingPersonsDataListListner[indexPath.row].contactNo
             switch self.missingPersonsDataList[indexPath.row].status{
             case "Pending":
                 cell.profileImage.borderColor = .yellow
+                cell.statusBtn.setTitle("Pending", for: .normal)
+                cell.statusBtn.backgroundColor = .yellow
             case "Inprogress":
                 cell.profileImage.borderColor = .blue
+                cell.statusBtn.setTitle("Inprogress", for: .normal)
+                cell.statusBtn.backgroundColor = .blue
             case "Completed":
                 cell.profileImage.borderColor = .green
+                cell.statusBtn.setTitle("Completed", for: .normal)
+                cell.statusBtn.backgroundColor = .green
             default:
                 cell.profileImage.borderColor = .red
+                cell.statusBtn.setTitle("Rejected", for: .normal)
+                cell.statusBtn.backgroundColor = .red
             }
             if self.missingPersonsDataList[indexPath.row].imgUrl != ""{
                 URLSession.shared.dataTask( with: URL(string: self.missingPersonsDataList[indexPath.row].imgUrl)!, completionHandler: {
@@ -340,7 +414,7 @@ extension MissingPersonsViewController{
         if (editingStyle == .delete) {
             let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete selected item?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                self._loader()
+                self._loader(label: "Delete")
                 if self.filterStatus == false{
                     self.gsdDataObj.deleteReport(id: self.missingPersonsDataListListner[indexPath.row].reportId, completion: {(_) in
                         self.boxView.removeFromSuperview()
