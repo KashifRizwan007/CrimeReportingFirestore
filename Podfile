@@ -11,6 +11,7 @@ target 'Crime Reporting' do
 	pod 'IQKeyboardManager'
 	pod 'SideMenu'
 	pod 'SDWebImage'
+	pod 'YPImagePicker'
   # Pods for Crime Reporting
 
 end

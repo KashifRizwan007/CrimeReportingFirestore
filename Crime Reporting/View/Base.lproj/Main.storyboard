@@ -77,14 +77,26 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fca-bG-4bX">
-                                        <rect key="frame" x="133" y="416" width="54" height="30"/>
-                                        <state key="normal" title="Sign Up"/>
+                                        <rect key="frame" x="133" y="408" width="54" height="30"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="signUpBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3A-th-BV5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-KY-dYh">
+                                        <rect key="frame" x="98.5" y="442" width="123" height="30"/>
+                                        <state key="normal" title="Forgot password?">
+                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="m1Z-dp-0FJ" kind="show" id="f0i-1u-HJM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="RXk-KY-dYh" firstAttribute="top" secondItem="fca-bG-4bX" secondAttribute="bottom" constant="4" id="1NO-M3-fUc"/>
                                     <constraint firstAttribute="trailing" secondItem="D7v-QT-tyk" secondAttribute="trailing" constant="50" id="4ON-q2-IZE"/>
                                     <constraint firstItem="jel-ir-f6s" firstAttribute="centerX" secondItem="wlb-eH-fWE" secondAttribute="centerX" id="BYK-BK-sDI"/>
                                     <constraint firstItem="2eX-nF-AjU" firstAttribute="top" secondItem="Go0-PG-nqm" secondAttribute="bottom" constant="40" id="CBd-hL-n2S"/>
@@ -96,11 +108,12 @@
                                     <constraint firstItem="D7v-QT-tyk" firstAttribute="leading" secondItem="wlb-eH-fWE" secondAttribute="leading" constant="50" id="XXe-R5-Q4C"/>
                                     <constraint firstItem="D7v-QT-tyk" firstAttribute="top" secondItem="jel-ir-f6s" secondAttribute="bottom" constant="40" id="YOF-gq-yj5"/>
                                     <constraint firstItem="fca-bG-4bX" firstAttribute="centerX" secondItem="wlb-eH-fWE" secondAttribute="centerX" id="YdR-df-9f3"/>
+                                    <constraint firstItem="RXk-KY-dYh" firstAttribute="centerX" secondItem="wlb-eH-fWE" secondAttribute="centerX" id="dWU-ta-Tyx"/>
                                     <constraint firstItem="mXh-r1-2NW" firstAttribute="top" secondItem="q7g-n2-NIr" secondAttribute="bottom" constant="15" id="frl-jh-yxM"/>
                                     <constraint firstItem="mXh-r1-2NW" firstAttribute="centerX" secondItem="wlb-eH-fWE" secondAttribute="centerX" id="hZ4-7I-sAx"/>
                                     <constraint firstItem="Go0-PG-nqm" firstAttribute="top" secondItem="mXh-r1-2NW" secondAttribute="bottom" constant="15" id="hpc-OL-33s"/>
+                                    <constraint firstItem="fca-bG-4bX" firstAttribute="top" secondItem="2eX-nF-AjU" secondAttribute="bottom" id="kOI-O6-Lsu"/>
                                     <constraint firstItem="q7g-n2-NIr" firstAttribute="top" secondItem="D7v-QT-tyk" secondAttribute="bottom" constant="15" id="nic-AE-jNQ"/>
-                                    <constraint firstItem="fca-bG-4bX" firstAttribute="top" secondItem="2eX-nF-AjU" secondAttribute="bottom" constant="8" id="vyV-ny-5p6"/>
                                     <constraint firstItem="q7g-n2-NIr" firstAttribute="centerX" secondItem="wlb-eH-fWE" secondAttribute="centerX" id="x0a-kf-08M"/>
                                     <constraint firstItem="q7g-n2-NIr" firstAttribute="centerY" secondItem="wlb-eH-fWE" secondAttribute="centerY" id="zoZ-b4-3U1"/>
                                 </constraints>
@@ -131,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="-90.401785714285708"/>
+            <point key="canvasLocation" x="744" y="243"/>
         </scene>
         <!--Missing Persons-->
         <scene sceneID="kdK-DF-sPL">
@@ -155,7 +168,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-4N-fyA" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-4N-fyA" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="OyH-Ez-ZVW"/>
@@ -329,7 +342,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-p7-lZn" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-p7-lZn" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="ECS-GZ-7Xi"/>
@@ -479,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBQ-yd-Rx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4641" y="931"/>
+            <point key="canvasLocation" x="3894" y="931"/>
         </scene>
         <!--Crime Reports-->
         <scene sceneID="wrs-su-hSg">
@@ -504,7 +517,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="217.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-tC-TaU" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-tC-TaU" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="Rgv-AN-LY4"/>
@@ -658,7 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIM-s2-Bpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4638.75" y="-437.32394366197184"/>
+            <point key="canvasLocation" x="3896" y="-437"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="awS-ei-j8v">
@@ -697,7 +710,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ohO-rM-zb0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.20120050880000001" green="0.86274901169999996" blue="0.97239733439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -709,6 +721,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCz-pv-HTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3897" y="244"/>
+        </scene>
+        <!--Password Reset View Controller-->
+        <scene sceneID="Afy-uU-FUO">
+            <objects>
+                <viewController id="m1Z-dp-0FJ" customClass="PasswordResetViewController" customModule="Crime_Reporting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J7G-PX-rIU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-TC-Jby">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azz-RB-gvI" customClass="textFieldDesign" customModule="Crime_Reporting" customModuleProvider="target">
+                                <rect key="frame" x="50" y="301" width="220" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="icons8-email-40"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYu-P3-KSe" customClass="ButtonDesign" customModule="Crime_Reporting" customModuleProvider="target">
+                                <rect key="frame" x="125" y="339" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.27136656640000001" green="0.35222890969999998" blue="0.39196240900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="MU7-rK-BnW"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInBtn:" destination="m1Z-dp-0FJ" eventType="touchUpInside" id="b0A-rU-rpc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter recovery email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORF-wH-Eag">
+                                <rect key="frame" x="82" y="260" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UmV-L9-HJ1">
+                                <rect key="frame" x="150" y="379" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="azz-RB-gvI" firstAttribute="centerY" secondItem="ooA-sW-o9c" secondAttribute="centerY" id="7WE-DW-zv7"/>
+                            <constraint firstItem="ooA-sW-o9c" firstAttribute="trailing" secondItem="bbg-TC-Jby" secondAttribute="trailing" id="8Xu-5D-RN0"/>
+                            <constraint firstItem="azz-RB-gvI" firstAttribute="centerX" secondItem="ooA-sW-o9c" secondAttribute="centerX" id="EcE-5P-fZ3"/>
+                            <constraint firstItem="fYu-P3-KSe" firstAttribute="centerX" secondItem="ooA-sW-o9c" secondAttribute="centerX" id="FHu-Oc-kle"/>
+                            <constraint firstItem="azz-RB-gvI" firstAttribute="top" secondItem="ORF-wH-Eag" secondAttribute="bottom" constant="20" id="KCd-fp-51g"/>
+                            <constraint firstItem="UmV-L9-HJ1" firstAttribute="top" secondItem="fYu-P3-KSe" secondAttribute="bottom" constant="10" id="LLe-E3-B5V"/>
+                            <constraint firstItem="ORF-wH-Eag" firstAttribute="centerX" secondItem="ooA-sW-o9c" secondAttribute="centerX" id="SBk-uK-7Bh"/>
+                            <constraint firstItem="bbg-TC-Jby" firstAttribute="leading" secondItem="ooA-sW-o9c" secondAttribute="leading" id="Xgv-my-6dr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bbg-TC-Jby" secondAttribute="bottom" id="jRj-IA-7nT"/>
+                            <constraint firstItem="azz-RB-gvI" firstAttribute="leading" secondItem="ooA-sW-o9c" secondAttribute="leading" constant="50" id="k1X-gj-X4L"/>
+                            <constraint firstItem="UmV-L9-HJ1" firstAttribute="centerX" secondItem="ooA-sW-o9c" secondAttribute="centerX" id="pte-C5-vph"/>
+                            <constraint firstItem="bbg-TC-Jby" firstAttribute="top" secondItem="J7G-PX-rIU" secondAttribute="top" id="rCX-6O-aOx"/>
+                            <constraint firstItem="ooA-sW-o9c" firstAttribute="trailing" secondItem="azz-RB-gvI" secondAttribute="trailing" constant="50" id="ty1-zP-iXQ"/>
+                            <constraint firstItem="fYu-P3-KSe" firstAttribute="top" secondItem="azz-RB-gvI" secondAttribute="bottom" constant="8" id="yfi-XF-eYL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ooA-sW-o9c"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="azz-RB-gvI" id="jyO-YN-PWP"/>
+                        <outlet property="loader" destination="UmV-L9-HJ1" id="Asa-IH-7wt"/>
+                        <outlet property="submitBtnOut" destination="fYu-P3-KSe" id="jpZ-8C-WWN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMS-yM-BHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742.5" y="-437.32394366197184"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="UFk-iJ-7lW">
@@ -776,7 +863,7 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yjT-I0-0oH">
                                         <rect key="frame" x="150" y="417" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="jEY-8e-2TS" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="jEY-8e-2TS" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
                                         <rect key="frame" x="110" y="122" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="gOg-A1-z6F"/>
@@ -868,7 +955,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HJ-ha-9mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162.31884057971016" y="-90.401785714285708"/>
+            <point key="canvasLocation" x="-24" y="243"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Moe-w6-gp4">
@@ -913,7 +1000,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="187.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" highlightedImage="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-S6-Sxd" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" highlightedImage="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="SPZ-S6-Sxd" customClass="UIImageViewRounded" customModule="Crime_Reporting" customModuleProvider="target">
                                                     <rect key="frame" x="110" y="11" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="BqW-Qb-6NJ"/>

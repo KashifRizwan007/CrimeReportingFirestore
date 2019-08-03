@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import YPImagePicker
 
 protocol signInFill{
     func fillFields(email:String, password:String)
 }
 
-class SignUpViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class SignUpViewController: UIViewController,UINavigationControllerDelegate {
 
     @IBOutlet weak var name: textFieldDesign!
     @IBOutlet weak var email: textFieldDesign!
@@ -78,40 +79,23 @@ extension SignUpViewController{
     }
     
     func selectImage() {
-        let optionMenu = UIAlertController(title: nil, message: "Choose Photo", preferredStyle: .actionSheet)
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default, handler: {action in
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
-        })
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {action in
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            self.present(imagePicker, animated: true, completion: nil)
-        })
-        let removeAction = UIAlertAction(title: "Remove Photo", style: .default, handler: {action in
-            self.imageViewOut.image = self.image
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {action in
-        })
-        optionMenu.addAction(galleryAction)
-        optionMenu.addAction(cameraAction)
-        optionMenu.addAction(removeAction)
-        optionMenu.addAction(cancelAction)
-        self.present(optionMenu, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            imageViewOut.image = pickedImage
+        var config = YPImagePickerConfiguration()
+        config.library.mediaType = .photo
+        config.onlySquareImagesFromCamera = false
+        config.shouldSaveNewPicturesToAlbum = true
+        config.startOnScreen = .library
+        config.screens = [.library, .photo]
+        //config.showsCrop = .rectangle(ratio: 1.0)
+        config.wordings.libraryTitle = "Photos"
+        config.showsPhotoFilters = false
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let img = items.singlePhoto?.image{
+                self.imageViewOut.image = img
+            }
+            picker.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
     
 }

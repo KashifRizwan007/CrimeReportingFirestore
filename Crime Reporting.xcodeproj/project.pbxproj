@@ -18,6 +18,7 @@
 		1223E1E122E848AB00C3AF5B /* report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1E022E848AB00C3AF5B /* report.swift */; };
 		1223E1E322E8534200C3AF5B /* CrimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1E222E8534200C3AF5B /* CrimesViewController.swift */; };
 		1223E1E922E87DDE00C3AF5B /* MissingPersonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */; };
+		1226021222F57561007571C0 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226021122F57561007571C0 /* PasswordResetViewController.swift */; };
 		123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4B22DEEF2F007445DC /* AppDelegate.swift */; };
 		123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4D22DEEF2F007445DC /* LoginViewController.swift */; };
 		123A7C5122DEEF2F007445DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A7C4F22DEEF2F007445DC /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		1223E1E022E848AB00C3AF5B /* report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = report.swift; sourceTree = "<group>"; };
 		1223E1E222E8534200C3AF5B /* CrimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimesViewController.swift; sourceTree = "<group>"; };
 		1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPersonsViewController.swift; sourceTree = "<group>"; };
+		1226021122F57561007571C0 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		123A7C4822DEEF2F007445DC /* Crime Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Reporting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A7C4B22DEEF2F007445DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		123A7C4D22DEEF2F007445DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				123A7C4D22DEEF2F007445DC /* LoginViewController.swift */,
 				123A7C6622DEFD68007445DC /* SignUpViewController.swift */,
+				1226021122F57561007571C0 /* PasswordResetViewController.swift */,
 				123A7C6F22DF095D007445DC /* InitialLoginViewController.swift */,
 				12FFCCAA22F4250A0037E5C4 /* InitialViewController.swift */,
 				1203991F22E1BF3500DBD7B0 /* SideMenuViewController.swift */,
@@ -345,6 +348,7 @@
 				123A7C6722DEFD68007445DC /* SignUpViewController.swift in Sources */,
 				123A7C7222DF099F007445DC /* SignUpRequest.swift in Sources */,
 				12FFCCAB22F4250A0037E5C4 /* InitialViewController.swift in Sources */,
+				1226021222F57561007571C0 /* PasswordResetViewController.swift in Sources */,
 				126B28B822EEE3C400DD4991 /* ReportsViewController.swift in Sources */,
 				125F6EC522E2F1B200C50470 /* submitReport.swift in Sources */,
 				1203992022E1BF3500DBD7B0 /* SideMenuViewController.swift in Sources */,
