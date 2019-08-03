@@ -19,6 +19,7 @@
 		1223E1E322E8534200C3AF5B /* CrimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1E222E8534200C3AF5B /* CrimesViewController.swift */; };
 		1223E1E922E87DDE00C3AF5B /* MissingPersonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */; };
 		1226021222F57561007571C0 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1226021122F57561007571C0 /* PasswordResetViewController.swift */; };
+		1226021622F593D7007571C0 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1226021522F593D6007571C0 /* launchImage.png */; };
 		123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4B22DEEF2F007445DC /* AppDelegate.swift */; };
 		123A7C4E22DEEF2F007445DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123A7C4D22DEEF2F007445DC /* LoginViewController.swift */; };
 		123A7C5122DEEF2F007445DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 123A7C4F22DEEF2F007445DC /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		1223E1E222E8534200C3AF5B /* CrimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimesViewController.swift; sourceTree = "<group>"; };
 		1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingPersonsViewController.swift; sourceTree = "<group>"; };
 		1226021122F57561007571C0 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		1226021522F593D6007571C0 /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage.png; sourceTree = "<group>"; };
 		123A7C4822DEEF2F007445DC /* Crime Reporting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crime Reporting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		123A7C4B22DEEF2F007445DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		123A7C4D22DEEF2F007445DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				123A7C5722DEEF31007445DC /* Info.plist */,
 				127E0B1222F3166200541DED /* userProfile.png */,
 				123A7C5222DEEF31007445DC /* Assets.xcassets */,
+				1226021522F593D6007571C0 /* launchImage.png */,
 				123A7C6D22DF05E0007445DC /* background.jpg */,
 			);
 			path = "Crime Reporting";
@@ -271,6 +274,7 @@
 				123A7C5622DEEF31007445DC /* LaunchScreen.storyboard in Resources */,
 				127E0B1322F3166300541DED /* userProfile.png in Resources */,
 				123A7C5E22DEF047007445DC /* GoogleService-Info.plist in Resources */,
+				1226021622F593D7007571C0 /* launchImage.png in Resources */,
 				123A7C5322DEEF31007445DC /* Assets.xcassets in Resources */,
 				123A7C5122DEEF2F007445DC /* Main.storyboard in Resources */,
 			);
