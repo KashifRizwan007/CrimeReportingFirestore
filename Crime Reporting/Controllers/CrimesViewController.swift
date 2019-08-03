@@ -44,29 +44,32 @@ class CrimesViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func statusBtnOut(_ sender: Any) {
-        let actionSheet = UIAlertController(title: "Report Status", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Pending", style: .default, handler: {(_) in
-            self.currentCell.statusBtn.setTitle("Pending", for: .normal)
-            self.currentCell.statusBtn.backgroundColor = .yellow
-            self.changeStatus()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Inprogress", style: .default, handler: {(_) in
-            self.currentCell.statusBtn.setTitle("Inprogress", for: .normal)
-            self.currentCell.statusBtn.backgroundColor = .blue
-            self.changeStatus()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Completed", style: .default, handler: {(_) in
-            self.currentCell.statusBtn.setTitle("Completed", for: .normal)
-            self.currentCell.statusBtn.backgroundColor = .green
-            self.changeStatus()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Rejected", style: .default, handler: {(_) in
-            self.currentCell.statusBtn.setTitle("Rejected", for: .normal)
-            self.currentCell.statusBtn.backgroundColor = .red
-            self.changeStatus()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion: nil)
+        if staticLinker.userInformation.userType == "admin"{
+            let actionSheet = UIAlertController(title: "Report Status", message: nil, preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Pending", style: .default, handler: {(_) in
+                self.currentCell.statusBtn.setTitle("Pending", for: .normal)
+                self.currentCell.statusBtn.backgroundColor = .yellow
+                self.changeStatus()
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Inprogress", style: .default, handler: {(_) in
+                self.currentCell.statusBtn.setTitle("Inprogress", for: .normal)
+                self.currentCell.statusBtn.backgroundColor = .blue
+                self.changeStatus()
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Completed", style: .default, handler: {(_) in
+                self.currentCell.statusBtn.setTitle("Completed", for: .normal)
+                self.currentCell.statusBtn.backgroundColor = .green
+                self.changeStatus()
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Rejected", style: .default, handler: {(_) in
+                self.currentCell.statusBtn.setTitle("Rejected", for: .normal)
+                self.currentCell.statusBtn.backgroundColor = .red
+                self.changeStatus()
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+        
     }
     
     private func changeStatus(){

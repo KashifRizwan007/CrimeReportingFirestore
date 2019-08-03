@@ -248,6 +248,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="statusBtnOut:" destination="29I-71-TVG" eventType="touchUpInside" id="CEr-jz-OK0"/>
                                                         <action selector="statusBtnOut:" destination="WxF-Ct-qFV" eventType="touchUpInside" id="G2U-xy-cTJ"/>
                                                     </connections>
                                                 </button>
@@ -422,6 +423,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="statusBtnOut:" destination="zPr-1H-hzo" eventType="touchUpInside" id="JfZ-WZ-Qyw"/>
                                                         <action selector="statusBtnOut:" destination="WxF-Ct-qFV" eventType="touchUpInside" id="aoD-Xh-0Hc"/>
                                                     </connections>
                                                 </button>
