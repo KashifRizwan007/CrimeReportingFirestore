@@ -1,6 +1,6 @@
 # CrimeReportingFirestore
 Simple portal type app to submit crime reports in your city.
-            Admin View
+            \nAdmin View\n
 ![admin gif](admin.gif "Admin View")
-            User View
+            \nUser View\n
 ![user gif](user.gif "User View")
