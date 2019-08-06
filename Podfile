@@ -12,6 +12,7 @@ target 'Crime Reporting' do
 	pod 'SideMenu'
 	pod 'SDWebImage'
 	pod 'YPImagePicker'
+	pod 'Charts'
   # Pods for Crime Reporting
 
 end

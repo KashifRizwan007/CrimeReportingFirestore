@@ -19,6 +19,7 @@ struct getUserData {
             if let err = error{
                 completion(err.localizedDescription,nil)
             }else{
+                print(Auth.auth().currentUser?.uid)
                 let data = self.db.collection("users").document(Auth.auth().currentUser!.uid)
                 data.getDocument(completion: {(document,error) in
                     if let _name = document?.data()!["name"] as? String, let _image = document?.data()!["image"] as? String, let userType = document?.data()!["userType"] as? String, let email = document?.data()!["email"] as? String{

@@ -12,6 +12,8 @@
 		1203992422E1C3F500DBD7B0 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */; };
 		1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992622E1C90A00DBD7B0 /* staticLinker.swift */; };
 		1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1203992822E1CA9700DBD7B0 /* userInfo.swift */; };
+		121D60F522F82626006990CC /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D60F422F82626006990CC /* AnalyticsViewController.swift */; };
+		121D60F722F83355006990CC /* getAnalyticsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121D60F622F83355006990CC /* getAnalyticsData.swift */; };
 		1223E1DB22E8412B00C3AF5B /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DA22E8412B00C3AF5B /* ReportsTableViewCell.swift */; };
 		1223E1DD22E8421A00C3AF5B /* gsdData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DC22E8421A00C3AF5B /* gsdData.swift */; };
 		1223E1DF22E8429700C3AF5B /* reportsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223E1DE22E8429700C3AF5B /* reportsCodable.swift */; };
@@ -52,6 +54,8 @@
 		1203992322E1C3F500DBD7B0 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1203992622E1C90A00DBD7B0 /* staticLinker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = staticLinker.swift; sourceTree = "<group>"; };
 		1203992822E1CA9700DBD7B0 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
+		121D60F422F82626006990CC /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		121D60F622F83355006990CC /* getAnalyticsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getAnalyticsData.swift; sourceTree = "<group>"; };
 		1223E1DA22E8412B00C3AF5B /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		1223E1DC22E8421A00C3AF5B /* gsdData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gsdData.swift; sourceTree = "<group>"; };
 		1223E1DE22E8429700C3AF5B /* reportsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportsCodable.swift; sourceTree = "<group>"; };
@@ -139,8 +143,8 @@
 				123A7C6A22DF01BA007445DC /* Networking */,
 				123A7C5D22DEF047007445DC /* GoogleService-Info.plist */,
 				123A7C5722DEEF31007445DC /* Info.plist */,
-				127E0B1222F3166200541DED /* userProfile.png */,
 				123A7C5222DEEF31007445DC /* Assets.xcassets */,
+				127E0B1222F3166200541DED /* userProfile.png */,
 				1226021522F593D6007571C0 /* launchImage.png */,
 				123A7C6D22DF05E0007445DC /* background.jpg */,
 			);
@@ -176,6 +180,7 @@
 				1223E1E822E87DDE00C3AF5B /* MissingPersonsViewController.swift */,
 				12A4B1BE22E9986600E6F3DD /* ComplaintsViewController.swift */,
 				126B28B722EEE3C400DD4991 /* ReportsViewController.swift */,
+				121D60F422F82626006990CC /* AnalyticsViewController.swift */,
 				12FFCCB022F46B540037E5C4 /* RouteManager.swift */,
 			);
 			path = Controllers;
@@ -189,6 +194,7 @@
 				125F6EC422E2F1B200C50470 /* submitReport.swift */,
 				1223E1DC22E8421A00C3AF5B /* gsdData.swift */,
 				12FFCCAE22F466520037E5C4 /* getUserData.swift */,
+				121D60F622F83355006990CC /* getAnalyticsData.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -342,9 +348,11 @@
 				123A7C4C22DEEF2F007445DC /* AppDelegate.swift in Sources */,
 				1223E1E122E848AB00C3AF5B /* report.swift in Sources */,
 				125F6EC322E2EC5B00C50470 /* FileReportViewController.swift in Sources */,
+				121D60F522F82626006990CC /* AnalyticsViewController.swift in Sources */,
 				1223E1E322E8534200C3AF5B /* CrimesViewController.swift in Sources */,
 				1223E1DB22E8412B00C3AF5B /* ReportsTableViewCell.swift in Sources */,
 				1203992922E1CA9700DBD7B0 /* userInfo.swift in Sources */,
+				121D60F722F83355006990CC /* getAnalyticsData.swift in Sources */,
 				123A7C6222DEF7E5007445DC /* ButtonDesign.swift in Sources */,
 				1203992722E1C90A00DBD7B0 /* staticLinker.swift in Sources */,
 				123A7C6922DEFFA8007445DC /* UIImageViewRounded.swift in Sources */,

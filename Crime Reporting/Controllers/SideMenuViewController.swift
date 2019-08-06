@@ -15,8 +15,8 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var menuTableView: UITableView!
     var userMenu:[[String]]!
     var userChoice = [["User"],["Dashboard","File A Report"],["Sign-Out"]]
-    var adminChoice = [["Admin"],["Dashboard"],["Sign-Out"]]
-    var imageNames = ["dashboard","add","view","signout"]
+    var adminChoice = [["Admin"],["Dashboard","Analytics"],["Sign-Out"]]
+    var imageNames = ["Dashboard":"dashboard","Analytics":"analytics","Sign-Out":"signout","File A Report":"add"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +29,14 @@ class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }else{
             self.userMenu = self.adminChoice
         }
+        self.menuTableView.reloadData()
     }
 }
 
 extension SideMenuViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        if indexPath.section == 2 && indexPath.row == 0{
+        if userMenu[indexPath.section][indexPath.row] == "Sign-Out"{
             let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to Sign Out?", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(_) in
                 do {
@@ -52,10 +52,12 @@ extension SideMenuViewController{
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }else if indexPath.section != 0 && indexPath.row == 0{
+        }else if userMenu[indexPath.section][indexPath.row] == "Dashboard"{
             self.dismiss(animated: true, completion: nil)
-        }else if indexPath.section != 0 && indexPath.row == 1{
+        }else if userMenu[indexPath.section][indexPath.row] == "File A Report"{
             self.performSegue(withIdentifier: "fileReport", sender: nil)
+        }else if userMenu[indexPath.section][indexPath.row] == "Analytics"{
+            self.performSegue(withIdentifier: "analytics", sender: nil)
         }
     }
     
@@ -99,8 +101,8 @@ extension SideMenuViewController{
             return cell
         }else{
             let cell = menuTableView.dequeueReusableCell(withIdentifier: "menu", for: indexPath) as! MenuTableViewCell
-            cell.name.text = self.userChoice[indexPath.section][indexPath.row]
-            cell.menuImage.image = UIImage(named: self.imageNames[indexPath.row])
+            cell.name.text = self.userMenu[indexPath.section][indexPath.row]
+            cell.menuImage.image = UIImage(named: self.imageNames[self.userMenu[indexPath.section][indexPath.row]]!)
             return cell
         }
     }
