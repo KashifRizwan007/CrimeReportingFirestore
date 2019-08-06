@@ -3,4 +3,4 @@ Simple portal type app to submit crime reports in your city.
 
 ![admin gif](admin.gif "Admin View")
 
-![admin gif](user.gif "User View")
+![user gif](user.gif "User View")
